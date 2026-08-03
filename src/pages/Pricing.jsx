@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import PriceTag from '../components/PriceTag';
-import { MobileMockup } from '../components/DeviceMockup';
 import { Check, Zap, ChevronDown, ShieldCheck, ArrowRight, Star } from 'lucide-react';
 
 export default function Pricing() {
@@ -41,31 +40,17 @@ export default function Pricing() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Header with Tasteful Floating Mobile Mockup Illustration */}
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 mb-16 max-w-5xl mx-auto">
-          <div className="text-left flex-1 space-y-4">
-            <span className="text-purple-300 font-bold text-xs uppercase tracking-widest bg-[#1a123d] px-4 py-1.5 rounded-full border border-[#35266e]">
-              No Hidden Fees • One-Time Payment
-            </span>
-            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl text-white leading-tight">
-              Transparent Pricing Built for ROI
-            </h1>
-            <p className="text-slate-300 text-base leading-relaxed">
-              Choose the perfect package for your business. Every tier includes 100% mobile optimization, clean React code, and fast turnaround.
-            </p>
-          </div>
-
-          {/* Small Tasteful Mobile Mockup Illustration */}
-          <div className="w-44 sm:w-52 shrink-0">
-            <div className="shadow-2xl rounded-2xl overflow-hidden border border-[#2b2157] bg-[#090717]">
-              <img 
-                src="/showcase/SunPeak Solar Co..png" 
-                alt="Quote Request Booking Preview"
-                className="w-full h-auto object-cover object-top aspect-[9/16]"
-              />
-            </div>
-          </div>
-
+        {/* Header — Full Width Text */}
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <span className="inline-block text-purple-300 font-bold text-xs uppercase tracking-widest bg-[#1a123d] px-4 py-1.5 rounded-full border border-[#35266e]">
+            No Hidden Fees • One-Time Payment
+          </span>
+          <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white leading-tight">
+            Transparent Pricing Built for ROI
+          </h1>
+          <p className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+            Choose the perfect package for your business. Every tier includes 100% mobile optimization, clean React code, and fast turnaround.
+          </p>
         </div>
 
         {/* Pricing Cards Grid */}
