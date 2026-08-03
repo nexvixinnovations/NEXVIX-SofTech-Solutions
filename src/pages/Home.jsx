@@ -32,7 +32,7 @@ export default function Home() {
       title: 'GreenBuild Construction',
       category: 'Business',
       categoryTag: 'Business',
-      image: '/Showcase/SunPeak Solar Co. MU.png',
+      image: '/showcase/SunPeak Solar Co. MU.png',
       desc: 'Modern commercial construction platform built for high lead generation.'
     },
     {
@@ -40,7 +40,7 @@ export default function Home() {
       title: 'Medilife Healthcare',
       category: 'Healthcare',
       categoryTag: 'Healthcare',
-      image: '/Showcase/Cotswold Glow Aesthetics  MU.png',
+      image: '/showcase/Cotswold Glow Aesthetics  MU.png',
       desc: 'Compassionate care web portal featuring online patient appointment booking.'
     },
     {
@@ -48,7 +48,7 @@ export default function Home() {
       title: 'UrbanStay Properties',
       category: 'Real Estate',
       categoryTag: 'Real Estate',
-      image: '/Showcase/Summit Roof & Air MU.png',
+      image: '/showcase/Summit Roof & Air MU.png',
       desc: 'Luxury real estate showcase with interactive property search engine.'
     },
     {
@@ -56,7 +56,7 @@ export default function Home() {
       title: 'TrendMart Store',
       category: 'E-Commerce',
       categoryTag: 'E-Commerce',
-      image: '/Showcase/Bondi Bloom Boutique MU.png',
+      image: '/showcase/Bondi Bloom Boutique MU.png',
       desc: 'Ultra-fast mobile fashion storefront with high conversion checkout.'
     }
   ];

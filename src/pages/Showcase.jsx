@@ -17,7 +17,7 @@ export default function Showcase() {
       name: 'SunPeak Solar Co.',
 
       industryTag: 'Blue-Collar',
-      image: '/Showcase/SunPeak Solar Co. MU.png',
+      image: '/showcase/SunPeak Solar Co. MU.png',
       ambientColor: 'from-amber-100/70 via-orange-50/50 to-yellow-100/60',
       description: 'High-converting solar lead generation platform designed for homeowners seeking renewable energy installations.',
       fullDetails: 'Engineered with instant solar quote calculators, interactive roof mapping, and 48-hour rapid deployment. Resulted in +140% increase in qualified lead submissions.'
@@ -27,7 +27,7 @@ export default function Showcase() {
       name: 'Summit Roof & Air',
 
       industryTag: 'Blue-Collar',
-      image: '/Showcase/Summit Roof & Air MU.png',
+      image: '/showcase/Summit Roof & Air MU.png',
       ambientColor: 'from-slate-200/70 via-zinc-100/60 to-stone-200/50',
       description: 'Commercial and residential roofing & HVAC service engine built for rapid contractor emergency lead response.',
       fullDetails: 'Includes 1-click emergency service dispatching, customer review integration, and localized SEO schema for maximum regional Google dominance.'
@@ -37,7 +37,7 @@ export default function Showcase() {
       name: 'Harley Street Dental Studio',
 
       industryTag: 'Healthcare',
-      image: '/Showcase/Cotswold Glow Aesthetics  MU.png',
+      image: '/showcase/Cotswold Glow Aesthetics  MU.png',
       ambientColor: 'from-cyan-100/70 via-sky-50/50 to-indigo-100/60',
       description: 'Luxury dental practice web application featuring online patient consultations and smile transformation galleries.',
       fullDetails: 'Designed with ultra-sleek medical aesthetics, instant booking calendar integration, and patient portal access.'
@@ -47,7 +47,7 @@ export default function Showcase() {
       name: 'Cotswold Glow Aesthetics',
 
       industryTag: 'Healthcare',
-      image: '/Showcase/Cotswold Glow Aesthetics  MU.png',
+      image: '/showcase/Cotswold Glow Aesthetics  MU.png',
       ambientColor: 'from-teal-100/60 via-emerald-50/50 to-green-100/60',
       description: 'High-end cosmetic skin and laser clinic platform tailored for discerning clients.',
       fullDetails: 'Features treatment pricing breakdown, before/after interactive sliders, and automated deposit booking workflows.'
@@ -57,7 +57,7 @@ export default function Showcase() {
       name: 'Bondi Bloom Boutique',
 
       industryTag: 'E-Commerce',
-      image: '/Showcase/Bondi Bloom Boutique MU.png',
+      image: '/showcase/Bondi Bloom Boutique MU.png',
       ambientColor: 'from-rose-100/70 via-pink-50/50 to-amber-100/50',
       description: 'Ultra-fast sustainable fashion storefront optimized for mobile shoppers.',
       fullDetails: 'Delivers sub-500ms page load speeds, Apple Pay / Mobile checkout integration, and instant inventory filtering.'
@@ -67,7 +67,7 @@ export default function Showcase() {
       name: 'Outback Clean Commercial',
 
       industryTag: 'Blue-Collar',
-      image: '/Showcase/Outback Clean Commercial MU.png',
+      image: '/showcase/Outback Clean Commercial MU.png',
       ambientColor: 'from-blue-100/70 via-indigo-50/50 to-slate-200/60',
       description: 'Industrial and commercial facility cleaning lead generation site.',
       fullDetails: 'Built with automated quote estimation tools, compliance badge verifications, and corporate procurement enquiry forms.'

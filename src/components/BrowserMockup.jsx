@@ -33,7 +33,7 @@ export default function BrowserMockup({
           loading="lazy"
           onError={(e) => {
             e.target.onerror = null;
-            e.target.src = "/Showcase/SunPeak Solar Co. MU.png";
+            e.target.src = "/showcase/SunPeak Solar Co. MU.png";
           }}
         />
       </div>
