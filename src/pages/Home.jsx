@@ -80,12 +80,13 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <video
             src="https://res.cloudinary.com/ji86uvi3/video/upload/v1785740580/Hero_Section_m24ass.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
+            autoPlay={true}
+            muted={true}
+            loop={true}
+            playsInline={true}
             preload="auto"
             className="w-full h-full object-cover"
+            style={{ pointerEvents: 'none' }}
           />
           {/* Dark gradient overlay — removes blue bg, keeps text readable */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#080616]/90 via-[#080616]/60 to-[#080616]/20" />
