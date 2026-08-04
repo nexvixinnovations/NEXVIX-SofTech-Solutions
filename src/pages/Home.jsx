@@ -79,7 +79,7 @@ export default function Home() {
         {/* ── FULL-BLEED BACKGROUND VIDEO ── */}
         <div className="absolute inset-0 z-0">
           <video
-            src="https://res.cloudinary.com/ji86uvi3/video/upload/v1785740580/Hero_Section_m24ass.mp4"
+            src="https://res.cloudinary.com/ji86uvi3/video/upload/v1785824473/0804_afpouk.mp4"
             autoPlay={true}
             muted={true}
             loop={true}

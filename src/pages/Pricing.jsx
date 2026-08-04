@@ -6,6 +6,12 @@ import { Check, Zap, ChevronDown, ShieldCheck, ArrowRight, Star } from 'lucide-r
 
 export default function Pricing() {
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
+  const [expandedCards, setExpandedCards] = useState({ 0: false, 1: false, 2: false, 3: false });
+
+  const toggleExpand = (idx) => {
+    setExpandedCards(prev => ({ ...prev, [idx]: !prev[idx] }));
+  };
+
 
   const faqs = [
     {
@@ -53,22 +59,22 @@ export default function Pricing() {
           </p>
         </div>
 
-        {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch mb-20">
+                        {/* Pricing Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 items-start mb-20">
           
           {/* Tier 1: Basic */}
-          <div className="bg-[#120d29] rounded-3xl border border-[#271d52] p-8 flex flex-col justify-between hover:border-purple-500/50 transition-all duration-300 shadow-lg">
-            <div>
+          <div className="bg-[#120d29] rounded-3xl border border-[#271d52] p-6 lg:p-8 flex flex-col hover:border-purple-500/50 transition-all duration-300 shadow-lg h-full">
+            <div className="flex-1">
               <div className="flex items-center justify-between mb-4">
                 <span className="text-xs font-bold uppercase tracking-wider text-purple-300">Launchpad</span>
-                <span className="px-3 py-1 bg-[#1a1240] text-purple-300 font-bold text-xs rounded-full border border-[#341d6e]">
+                <span className="px-3 py-1 bg-[#1a1240] text-purple-300 font-bold text-[10px] sm:text-xs rounded-full border border-[#341d6e]">
                   48-Hour Delivery
                 </span>
               </div>
               <h3 className="font-heading font-extrabold text-2xl text-white mb-2">
                 Basic Package
               </h3>
-              <p className="text-xs text-slate-400 mb-6">
+              <p className="text-xs text-slate-400 mb-6 min-h-[48px]">
                 Ideal for single-service businesses needing a fast, high-converting landing page.
               </p>
 
@@ -92,11 +98,23 @@ export default function Pricing() {
                   <Check className="w-4 h-4 text-purple-400 shrink-0" />
                   <span>Basic On-Page SEO Meta Setup</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <Check className="w-4 h-4 text-purple-400 shrink-0" />
-                  <span>Fast 48-Hour Delivery Guarantee</span>
+                
+                {/* Hidden Features */}
+                <div className={`space-y-3.5 overflow-hidden transition-all duration-500 ${expandedCards[0] ? 'max-h-[500px] opacity-100 mt-3.5' : 'max-h-0 opacity-0'}`}>
+                  <div className="flex items-center gap-3">
+                    <Check className="w-4 h-4 text-purple-400 shrink-0" />
+                    <span>Fast 48-Hour Delivery Guarantee</span>
+                  </div>
+                  <div className="mt-4 pt-4 border-t border-[#1f1745]/50 flex items-center justify-center">
+                    <span className="text-sm font-bold text-emerald-400">✅ Personal Domain ID Included FREE</span>
+                  </div>
                 </div>
               </div>
+
+              <button onClick={() => toggleExpand(0)} className="text-purple-400 text-xs font-bold mt-2 flex items-center justify-center gap-1 w-full hover:text-purple-300 transition-colors pb-4 border-b border-[#1f1745] focus:outline-none">
+                {expandedCards[0] ? 'Show Less' : 'Show Full Details'}
+                <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${expandedCards[0] ? 'rotate-180' : ''}`} />
+              </button>
             </div>
 
             <Link
@@ -107,25 +125,25 @@ export default function Pricing() {
             </Link>
           </div>
 
-          {/* Tier 2: Standard (Middle Elevated "Most Popular") */}
-          <div className="bg-[#0f0b24] rounded-3xl border-2 border-[#6348f6] p-8 flex flex-col justify-between relative shadow-2xl shadow-purple-900/40 lg:-translate-y-4">
+          {/* Tier 2: Standard */}
+          <div className="bg-[#0f0b24] rounded-3xl border-2 border-[#6348f6] p-6 lg:p-8 flex flex-col relative shadow-2xl shadow-purple-900/40 h-full">
             {/* Most Popular Ribbon */}
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#6348f6] text-white text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full shadow-md flex items-center gap-1.5">
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#6348f6] text-white text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full shadow-md flex items-center gap-1.5 whitespace-nowrap">
               <Star className="w-3.5 h-3.5 fill-white" />
               <span>Most Popular Choice</span>
             </div>
 
-            <div>
+            <div className="flex-1">
               <div className="flex items-center justify-between mb-4 pt-2">
                 <span className="text-xs font-bold uppercase tracking-wider text-purple-300">Multi-Page Growth</span>
-                <span className="px-3 py-1 bg-[#1a1240] text-purple-300 font-bold text-xs rounded-full border border-[#341d6e]">
+                <span className="px-3 py-1 bg-[#1a1240] text-purple-300 font-bold text-[10px] sm:text-xs rounded-full border border-[#341d6e]">
                   72-Hour Delivery
                 </span>
               </div>
               <h3 className="font-heading font-extrabold text-2xl text-white mb-2">
                 Standard Package
               </h3>
-              <p className="text-xs text-slate-400 mb-6">
+              <p className="text-xs text-slate-400 mb-6 min-h-[48px]">
                 Complete multi-page marketing website built for established service providers & clinics.
               </p>
 
@@ -149,11 +167,37 @@ export default function Pricing() {
                   <Check className="w-4 h-4 text-purple-400 shrink-0" />
                   <span>Advanced Localized SEO Setup</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <Check className="w-4 h-4 text-purple-400 shrink-0" />
-                  <span>WhatsApp & Mailto Integration</span>
+
+                <div className={`space-y-3.5 overflow-hidden transition-all duration-500 ${expandedCards[1] ? 'max-h-[1000px] opacity-100 mt-3.5' : 'max-h-0 opacity-0'}`}>
+                  <div className="flex items-center gap-3">
+                    <Check className="w-4 h-4 text-purple-400 shrink-0" />
+                    <span>WhatsApp & Mailto Integration</span>
+                  </div>
+                  
+                  {/* Maintenance Section */}
+                  <div className="bg-[#1a1240]/50 rounded-xl p-4 border border-[#341d6e]/50 space-y-2 mt-4 mb-4">
+                    <h4 className="font-bold text-white text-sm">Website Maintenance - $19/month</h4>
+                    <ul className="space-y-1.5 text-xs text-slate-300 mt-2">
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Security Updates</li>
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Performance Monitoring</li>
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Minor Content Changes</li>
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Monthly Backup</li>
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Technical Support</li>
+                    </ul>
+                  </div>
+
+                  <div className="space-y-2 pt-4 text-center border-t border-[#1f1745]">
+                    <span className="block text-xs font-bold text-slate-300">No Hidden Charges</span>
+                    <span className="block text-xs font-bold text-emerald-400">No Extra Charges Will Be Applied</span>
+                    <span className="block text-sm font-bold text-amber-300 mt-2">🎁 Personal Domain ID Included FREE</span>
+                  </div>
                 </div>
               </div>
+
+              <button onClick={() => toggleExpand(1)} className="text-purple-400 text-xs font-bold mt-2 flex items-center justify-center gap-1 w-full hover:text-purple-300 transition-colors pb-4 border-b border-[#1f1745] focus:outline-none">
+                {expandedCards[1] ? 'Show Less' : 'Show Full Details'}
+                <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${expandedCards[1] ? 'rotate-180' : ''}`} />
+              </button>
             </div>
 
             <Link
@@ -164,59 +208,187 @@ export default function Pricing() {
             </Link>
           </div>
 
-          {/* Tier 3: Premium */}
-          <div className="bg-[#120d29] rounded-3xl border border-[#271d52] p-8 flex flex-col justify-between hover:border-purple-500/50 transition-all duration-300 shadow-lg">
-            <div>
+          {/* Tier 3: Premium Website */}
+          <div className="bg-[#120d29] rounded-3xl border border-[#271d52] p-6 lg:p-8 flex flex-col hover:border-purple-500/50 transition-all duration-300 shadow-lg h-full">
+            <div className="flex-1">
               <div className="flex items-center justify-between mb-4">
                 <span className="text-xs font-bold uppercase tracking-wider text-purple-300">Enterprise</span>
-                <span className="px-3 py-1 bg-[#1a1240] text-slate-300 font-semibold text-xs rounded-full border border-[#271d52]">
+                <span className="px-3 py-1 bg-[#1a1240] text-slate-300 font-semibold text-[10px] sm:text-xs rounded-full border border-[#271d52]">
                   4-7 Days Delivery
                 </span>
               </div>
               <h3 className="font-heading font-extrabold text-2xl text-white mb-2">
-                Premium Package
+                Premium Website Package
               </h3>
-              <p className="text-xs text-slate-400 mb-6">
-                Full web application & custom dashboard for scaled enterprises & multi-location brands.
+              <p className="text-xs text-slate-400 mb-6 min-h-[48px]">
+                High-performance premium business website with advanced UI, immersive 3D experiences, enterprise integrations, cloud deployment, and a powerful admin dashboard built for growing businesses.
               </p>
 
               {/* Reusable PriceTag Component */}
-              <PriceTag original={6500} offer={4200} />
+              <PriceTag original={5000} offer={4200} />
 
               <div className="my-6 border-t border-[#1f1745] pt-6 space-y-3.5 text-sm text-slate-300">
                 <div className="flex items-center gap-3">
                   <Check className="w-4 h-4 text-purple-400 shrink-0" />
-                  <span>Full Web App + Custom Admin Dashboard</span>
+                  <span>Premium Business Website</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Check className="w-4 h-4 text-purple-400 shrink-0" />
-                  <span>Multi-Language & Multi-Currency Support</span>
+                  <span>Modern 3D Website Experience</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Check className="w-4 h-4 text-purple-400 shrink-0" />
-                  <span>3 Months Unlimited Code Refinements</span>
+                  <span>Interactive 3D Animations</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Check className="w-4 h-4 text-purple-400 shrink-0" />
-                  <span>Priority 24/7 Developer Support</span>
+                  <span>Custom UI/UX Design</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <Check className="w-4 h-4 text-purple-400 shrink-0" />
-                  <span>Custom API & Payment Gateway Integrations</span>
+
+                <div className={`space-y-3.5 overflow-hidden transition-all duration-500 ${expandedCards[2] ? 'max-h-[1500px] opacity-100 mt-3.5' : 'max-h-0 opacity-0'}`}>
+                  <div className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 shrink-0" /><span>Premium Responsive Design</span></div>
+                  <div className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 shrink-0" /><span>Admin Dashboard</span></div>
+                  <div className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 shrink-0" /><span>Customer Management</span></div>
+                  <div className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 shrink-0" /><span>Advanced SEO Setup</span></div>
+                  <div className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 shrink-0" /><span>Google Analytics Integration</span></div>
+                  <div className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 shrink-0" /><span>Cloud Deployment</span></div>
+                  <div className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 shrink-0" /><span>SSL Security</span></div>
+                  <div className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 shrink-0" /><span>API Integration</span></div>
+                  <div className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 shrink-0" /><span>Payment Gateway Integration</span></div>
+                  <div className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 shrink-0" /><span>High-Speed Performance</span></div>
+                  <div className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 shrink-0" /><span>Unlimited Scalability</span></div>
+                  <div className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 shrink-0" /><span>Priority Technical Support</span></div>
+                  
+                  {/* Maintenance Section */}
+                  <div className="bg-[#1a1240]/50 rounded-xl p-4 border border-[#341d6e]/50 space-y-2 mt-4 mb-4">
+                    <h4 className="font-bold text-white text-sm">FREE 1 Month Maintenance</h4>
+                    <p className="text-[10px] text-slate-400 uppercase tracking-wider mb-2 font-bold">Includes:</p>
+                    <ul className="space-y-1.5 text-xs text-slate-300">
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Bug Fixes</li>
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Performance Optimization</li>
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Security Updates</li>
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Minor Content Updates</li>
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Technical Support</li>
+                    </ul>
+                  </div>
+
+                  <div className="space-y-2 pt-4 text-center border-t border-[#1f1745]">
+                    <span className="block text-xs font-bold text-emerald-400">No Extra Charges Will Be Applied</span>
+                    <span className="block text-sm font-bold text-amber-300 mt-2">🎁 Personal Domain ID Included FREE</span>
+                  </div>
                 </div>
               </div>
+
+              <button onClick={() => toggleExpand(2)} className="text-purple-400 text-xs font-bold mt-2 flex items-center justify-center gap-1 w-full hover:text-purple-300 transition-colors pb-4 border-b border-[#1f1745] focus:outline-none">
+                {expandedCards[2] ? 'Show Less' : 'Show Full Details'}
+                <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${expandedCards[2] ? 'rotate-180' : ''}`} />
+              </button>
             </div>
 
             <Link
               to="/contact"
               className="w-full mt-6 py-3.5 px-6 rounded-2xl bg-[#1a1240] hover:bg-[#241858] text-white font-extrabold text-sm text-center border border-[#341d6e] hover:border-purple-500/60 transition-all duration-300"
             >
-              Go Full-Stack
+              Start Premium Website
+            </Link>
+          </div>
+
+          {/* Tier 4: Full Business Solution */}
+          <div className="bg-[#120d29] rounded-3xl border border-[#271d52] p-6 lg:p-8 flex flex-col hover:border-purple-500/50 transition-all duration-300 shadow-lg relative overflow-hidden h-full">
+            {/* Badge */}
+            <div className="absolute top-0 right-0 bg-[#6348f6] text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-bl-xl shadow-md">
+              Most Complete
+            </div>
+            
+            <div className="flex-1">
+              <div className="flex items-center justify-between mb-4 mt-4">
+                <span className="text-xs font-bold uppercase tracking-wider text-purple-300">Ultimate</span>
+                <span className="px-3 py-1 bg-[#1a1240] text-slate-300 font-semibold text-[10px] sm:text-xs rounded-full border border-[#271d52]">
+                  7-10 Days Delivery
+                </span>
+              </div>
+              <h3 className="font-heading font-extrabold text-2xl text-white mb-2">
+                Full Business Solution
+              </h3>
+              <p className="text-xs text-slate-400 mb-6 min-h-[48px]">
+                Complete digital business ecosystem including customer website, secure cloud backend, admin application, billing system, customer management, reporting, and business automation.
+              </p>
+
+              {/* Reusable PriceTag Component */}
+              <PriceTag original={8000} offer={6500} />
+
+              <div className="my-6 border-t border-[#1f1745] pt-6 space-y-3.5 text-sm text-slate-300">
+                <div className="flex items-center gap-3">
+                  <Check className="w-4 h-4 text-purple-400 shrink-0" />
+                  <span>Premium Customer Website</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Check className="w-4 h-4 text-purple-400 shrink-0" />
+                  <span>Cloud Backend Infrastructure</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Check className="w-4 h-4 text-purple-400 shrink-0" />
+                  <span>Admin Management App</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Check className="w-4 h-4 text-purple-400 shrink-0" />
+                  <span>Customer Dashboard</span>
+                </div>
+
+                <div className={`space-y-3.5 overflow-hidden transition-all duration-500 ${expandedCards[3] ? 'max-h-[2000px] opacity-100 mt-3.5' : 'max-h-0 opacity-0'}`}>
+                  <div className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 shrink-0" /><span>Billing & Invoice System</span></div>
+                  <div className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 shrink-0" /><span>Order Management</span></div>
+                  <div className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 shrink-0" /><span>Customer Database</span></div>
+                  <div className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 shrink-0" /><span>Role-Based Authentication</span></div>
+                  <div className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 shrink-0" /><span>Secure Login System</span></div>
+                  <div className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 shrink-0" /><span>Payment Gateway Integration</span></div>
+                  <div className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 shrink-0" /><span>Cloud Database</span></div>
+                  <div className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 shrink-0" /><span>API Development</span></div>
+                  <div className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 shrink-0" /><span>Business Analytics Dashboard</span></div>
+                  <div className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 shrink-0" /><span>Reports & Statistics</span></div>
+                  <div className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 shrink-0" /><span>WhatsApp Integration</span></div>
+                  <div className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 shrink-0" /><span>Email Notifications</span></div>
+                  <div className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 shrink-0" /><span>Backup & Recovery</span></div>
+                  <div className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 shrink-0" /><span>Advanced Security</span></div>
+                  <div className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 shrink-0" /><span>SEO Optimization</span></div>
+                  <div className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 shrink-0" /><span>Mobile Responsive Website</span></div>
+                  <div className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 shrink-0" /><span>Source Code Included</span></div>
+
+                  {/* Maintenance Section */}
+                  <div className="bg-[#1a1240]/50 rounded-xl p-4 border border-[#341d6e]/50 space-y-2 mt-4 mb-4">
+                    <h4 className="font-bold text-white text-sm">FREE 1 Month Maintenance</h4>
+                    <p className="text-[10px] text-slate-400 uppercase tracking-wider mb-2 font-bold">Includes:</p>
+                    <ul className="space-y-1.5 text-xs text-slate-300">
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Bug Fixes</li>
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Security Updates</li>
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Performance Improvements</li>
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Feature Refinements</li>
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Technical Support</li>
+                    </ul>
+                  </div>
+
+                  <div className="space-y-2 pt-4 text-center border-t border-[#1f1745]">
+                    <span className="block text-xs font-bold text-emerald-400">No Extra Charges Will Be Applied</span>
+                    <span className="block text-sm font-bold text-amber-300 mt-2">🎁 Personal Domain ID Included FREE</span>
+                  </div>
+                </div>
+              </div>
+
+              <button onClick={() => toggleExpand(3)} className="text-purple-400 text-xs font-bold mt-2 flex items-center justify-center gap-1 w-full hover:text-purple-300 transition-colors pb-4 border-b border-[#1f1745] focus:outline-none">
+                {expandedCards[3] ? 'Show Less' : 'Show Full Details'}
+                <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${expandedCards[3] ? 'rotate-180' : ''}`} />
+              </button>
+            </div>
+
+            <Link
+              to="/contact"
+              className="w-full mt-6 py-3.5 px-6 rounded-2xl bg-[#1a1240] hover:bg-[#241858] text-white font-extrabold text-sm text-center border border-[#341d6e] hover:border-purple-500/60 transition-all duration-300"
+            >
+              Get Full Solution
             </Link>
           </div>
 
         </div>
-
         {/* FAQ Accordion Section */}
         <div className="max-w-4xl mx-auto pt-10 border-t border-[#1f1745]">
           <div className="text-center mb-10">
