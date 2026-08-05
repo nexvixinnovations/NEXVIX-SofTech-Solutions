@@ -100,11 +100,28 @@ export default function Pricing() {
                 </div>
                 
                 {/* Hidden Features */}
-                <div className={`space-y-3.5 overflow-hidden transition-all duration-500 ${expandedCards[0] ? 'max-h-[500px] opacity-100 mt-3.5' : 'max-h-0 opacity-0'}`}>
+                <div className={`space-y-3.5 overflow-hidden transition-all duration-500 ${expandedCards[0] ? 'max-h-[700px] opacity-100 mt-3.5' : 'max-h-0 opacity-0'}`}>
                   <div className="flex items-center gap-3">
                     <Check className="w-4 h-4 text-purple-400 shrink-0" />
                     <span>Fast 48-Hour Delivery Guarantee</span>
                   </div>
+                  
+                  {/* Maintenance Section */}
+                  <div className="bg-[#1a1240]/50 rounded-xl p-4 border border-[#341d6e]/50 space-y-2 mt-4 mb-4">
+                    <div className="flex items-center justify-between gap-2">
+                      <h4 className="font-bold text-white text-sm">Optional Maintenance</h4>
+                      <span className="text-purple-300 font-extrabold text-xs">$300/mo</span>
+                    </div>
+                    <p className="text-[10px] text-amber-300 font-medium">✨ Added only if you are interested</p>
+                    <ul className="space-y-1.5 text-xs text-slate-300 mt-2">
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Custom Code Changes</li>
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Offers & Add-ons Setup</li>
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Photo & Asset Changes</li>
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Style & UI Upgrades</li>
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Technical Support & Bug Fixes</li>
+                    </ul>
+                  </div>
+
                   <div className="mt-4 pt-4 border-t border-[#1f1745]/50 flex items-center justify-center">
                     <span className="text-sm font-bold text-emerald-400">✅ Personal Domain ID Included FREE</span>
                   </div>
@@ -176,13 +193,17 @@ export default function Pricing() {
                   
                   {/* Maintenance Section */}
                   <div className="bg-[#1a1240]/50 rounded-xl p-4 border border-[#341d6e]/50 space-y-2 mt-4 mb-4">
-                    <h4 className="font-bold text-white text-sm">Website Maintenance - $19/month</h4>
+                    <div className="flex items-center justify-between gap-2">
+                      <h4 className="font-bold text-white text-sm">Optional Maintenance</h4>
+                      <span className="text-purple-300 font-extrabold text-xs">$300/mo</span>
+                    </div>
+                    <p className="text-[10px] text-amber-300 font-medium">✨ Added only if you are interested</p>
                     <ul className="space-y-1.5 text-xs text-slate-300 mt-2">
-                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Security Updates</li>
-                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Performance Monitoring</li>
-                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Minor Content Changes</li>
-                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Monthly Backup</li>
-                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Technical Support</li>
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Custom Code Changes</li>
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Offers & Add-ons Setup</li>
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Photo & Asset Changes</li>
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Style & UI Upgrades</li>
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Technical Support & Bug Fixes</li>
                     </ul>
                   </div>
 
@@ -261,14 +282,17 @@ export default function Pricing() {
                   
                   {/* Maintenance Section */}
                   <div className="bg-[#1a1240]/50 rounded-xl p-4 border border-[#341d6e]/50 space-y-2 mt-4 mb-4">
-                    <h4 className="font-bold text-white text-sm">FREE 1 Month Maintenance</h4>
-                    <p className="text-[10px] text-slate-400 uppercase tracking-wider mb-2 font-bold">Includes:</p>
-                    <ul className="space-y-1.5 text-xs text-slate-300">
-                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Bug Fixes</li>
-                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Performance Optimization</li>
-                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Security Updates</li>
-                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Minor Content Updates</li>
-                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Technical Support</li>
+                    <div className="flex items-center justify-between gap-2">
+                      <h4 className="font-bold text-white text-sm">Optional Maintenance</h4>
+                      <span className="text-purple-300 font-extrabold text-xs">$500/mo</span>
+                    </div>
+                    <p className="text-[10px] text-emerald-400 font-bold">🎁 1st Month FREE • Added only if interested</p>
+                    <ul className="space-y-1.5 text-xs text-slate-300 mt-2">
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Custom Code Changes</li>
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Offers & Add-ons Integration</li>
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Photo & Asset Changes</li>
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Style & UI Upgrades</li>
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Advanced Technical Support & Security</li>
                     </ul>
                   </div>
 
@@ -353,17 +377,22 @@ export default function Pricing() {
                   <div className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 shrink-0" /><span>SEO Optimization</span></div>
                   <div className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 shrink-0" /><span>Mobile Responsive Website</span></div>
                   <div className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 shrink-0" /><span>Source Code Included</span></div>
+                  <div className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 shrink-0" /><span>Includes up to 2 rounds of revisions</span></div>
+                  <div className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 shrink-0" /><span>Client must provide content/copy</span></div>
 
                   {/* Maintenance Section */}
                   <div className="bg-[#1a1240]/50 rounded-xl p-4 border border-[#341d6e]/50 space-y-2 mt-4 mb-4">
-                    <h4 className="font-bold text-white text-sm">FREE 1 Month Maintenance</h4>
-                    <p className="text-[10px] text-slate-400 uppercase tracking-wider mb-2 font-bold">Includes:</p>
-                    <ul className="space-y-1.5 text-xs text-slate-300">
-                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Bug Fixes</li>
-                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Security Updates</li>
-                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Performance Improvements</li>
-                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Feature Refinements</li>
-                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Technical Support</li>
+                    <div className="flex items-center justify-between gap-2">
+                      <h4 className="font-bold text-white text-sm">Optional Maintenance</h4>
+                      <span className="text-purple-300 font-extrabold text-xs">$500/mo</span>
+                    </div>
+                    <p className="text-[10px] text-emerald-400 font-bold">🎁 1st Month FREE • Added only if interested</p>
+                    <ul className="space-y-1.5 text-xs text-slate-300 mt-2">
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Custom Code Changes</li>
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Offers & Add-ons Integration</li>
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Photo & Asset Changes</li>
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Style & UI Upgrades</li>
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span> Advanced Technical Support & Security</li>
                     </ul>
                   </div>
 
