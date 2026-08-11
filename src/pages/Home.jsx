@@ -24,40 +24,44 @@ import DualDeviceMockup, { HeroTripleDeviceMockup, LaptopMockup } from '../compo
 export default function Home() {
   const [activeTab, setActiveTab] = useState('All');
 
-  const categories = ['All', 'Business', 'Real Estate', 'Healthcare', 'E-Commerce', 'Education', 'Travel', 'Finance'];
+  const categories = ['All', 'E-Commerce', 'Medical', 'Fitness', 'Catering'];
 
   const portfolioProjects = [
     {
       id: 1,
-      title: 'GreenBuild Construction',
-      category: 'Business',
-      categoryTag: 'Business',
-      image: '/showcase/SunPeak Solar Co. MU.png',
-      desc: 'Modern commercial construction platform built for high lead generation.'
+      title: 'Digital Art Studio',
+      category: 'E-Commerce',
+      categoryTag: 'E-Commerce Store',
+      image: '/showcase/digital-art-studio.png',
+      url: 'https://digitalartstudio.pages.dev/',
+      desc: 'Custom e-commerce store built for personalized watercolor portraits.'
     },
     {
       id: 2,
-      title: 'Medilife Healthcare',
-      category: 'Healthcare',
-      categoryTag: 'Healthcare',
-      image: '/showcase/Cotswold Glow Aesthetics  MU.png',
-      desc: 'Compassionate care web portal featuring online patient appointment booking.'
+      title: 'Serene Health',
+      category: 'Medical',
+      categoryTag: 'Medical & Healthcare',
+      image: '/showcase/serene-health.png',
+      url: 'https://serene-health.netlify.app/',
+      desc: 'Calm, trust-focused website design for healthcare practice inquiries.'
     },
     {
       id: 3,
-      title: 'UrbanStay Properties',
-      category: 'Real Estate',
-      categoryTag: 'Real Estate',
-      image: '/showcase/Summit Roof & Air MU.png',
-      desc: 'Luxury real estate showcase with interactive property search engine.'
+      title: 'Nexvix Gym',
+      category: 'Fitness',
+      categoryTag: 'Gym & Fitness',
+      image: '/showcase/nexvix-gym.png',
+      url: 'https://nexvix-gym.netlify.app/',
+      desc: 'High-energy fitness platform focused on class signups and memberships.'
     },
     {
       id: 4,
-      title: 'TrendMart Store',
+      title: 'Nexvix E-commerce',
       category: 'E-Commerce',
-      categoryTag: 'E-Commerce',
-      image: '/showcase/Bondi Bloom Boutique MU.png',
-      desc: 'Ultra-fast mobile fashion storefront with high conversion checkout.'
+      categoryTag: 'E-Commerce Store',
+      image: '/showcase/nexvix-ecommerce.png',
+      url: 'https://nexvix-ecommerce.netlify.app/',
+      desc: 'Modern e-commerce storefront with product grid and checkout flow.'
     }
   ];
 

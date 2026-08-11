@@ -1,188 +1,262 @@
 import React, { useState } from 'react';
 import SEO from '../components/SEO';
-import BrowserMockup from '../components/BrowserMockup';
-import DualDeviceMockup, { LaptopMockup } from '../components/DeviceMockup';
-import { Sparkles, X, ShieldCheck, CheckCircle2 } from 'lucide-react';
-
+import ProjectCard from '../components/ProjectCard';
+import { projectsData, filterCategories } from '../data/projectsData';
+import { Sparkles, X, ExternalLink, ShieldCheck, CheckCircle2, ArrowRight, Layers, Award, Clock, Globe } from 'lucide-react';
 
 export default function Showcase() {
-  const [activeTab, setActiveTab] = useState('All');
+  const [activeTab, setActiveTab] = useState('All Projects');
   const [selectedProject, setSelectedProject] = useState(null);
 
-  const filterTabs = ['All', 'Blue-Collar', 'Healthcare', 'E-Commerce'];
-
-  const projects = [
-    {
-      id: 1,
-      name: 'SunPeak Solar Co.',
-
-      industryTag: 'Blue-Collar',
-      image: '/showcase/SunPeak Solar Co. MU.png',
-      ambientColor: 'from-amber-100/70 via-orange-50/50 to-yellow-100/60',
-      description: 'High-converting solar lead generation platform designed for homeowners seeking renewable energy installations.',
-      fullDetails: 'Engineered with instant solar quote calculators, interactive roof mapping, and 48-hour rapid deployment. Resulted in +140% increase in qualified lead submissions.'
-    },
-    {
-      id: 2,
-      name: 'Summit Roof & Air',
-
-      industryTag: 'Blue-Collar',
-      image: '/showcase/Summit Roof & Air MU.png',
-      ambientColor: 'from-slate-200/70 via-zinc-100/60 to-stone-200/50',
-      description: 'Commercial and residential roofing & HVAC service engine built for rapid contractor emergency lead response.',
-      fullDetails: 'Includes 1-click emergency service dispatching, customer review integration, and localized SEO schema for maximum regional Google dominance.'
-    },
-    {
-      id: 3,
-      name: 'Harley Street Dental Studio',
-
-      industryTag: 'Healthcare',
-      image: '/showcase/Cotswold Glow Aesthetics  MU.png',
-      ambientColor: 'from-cyan-100/70 via-sky-50/50 to-indigo-100/60',
-      description: 'Luxury dental practice web application featuring online patient consultations and smile transformation galleries.',
-      fullDetails: 'Designed with ultra-sleek medical aesthetics, instant booking calendar integration, and patient portal access.'
-    },
-    {
-      id: 4,
-      name: 'Cotswold Glow Aesthetics',
-
-      industryTag: 'Healthcare',
-      image: '/showcase/Cotswold Glow Aesthetics  MU.png',
-      ambientColor: 'from-teal-100/60 via-emerald-50/50 to-green-100/60',
-      description: 'High-end cosmetic skin and laser clinic platform tailored for discerning clients.',
-      fullDetails: 'Features treatment pricing breakdown, before/after interactive sliders, and automated deposit booking workflows.'
-    },
-    {
-      id: 5,
-      name: 'Bondi Bloom Boutique',
-
-      industryTag: 'E-Commerce',
-      image: '/showcase/Bondi Bloom Boutique MU.png',
-      ambientColor: 'from-rose-100/70 via-pink-50/50 to-amber-100/50',
-      description: 'Ultra-fast sustainable fashion storefront optimized for mobile shoppers.',
-      fullDetails: 'Delivers sub-500ms page load speeds, Apple Pay / Mobile checkout integration, and instant inventory filtering.'
-    },
-    {
-      id: 6,
-      name: 'Outback Clean Commercial',
-
-      industryTag: 'Blue-Collar',
-      image: '/showcase/Outback Clean Commercial MU.png',
-      ambientColor: 'from-blue-100/70 via-indigo-50/50 to-slate-200/60',
-      description: 'Industrial and commercial facility cleaning lead generation site.',
-      fullDetails: 'Built with automated quote estimation tools, compliance badge verifications, and corporate procurement enquiry forms.'
-    }
-  ];
-
-  // Client-side filtering logic
-  const filteredProjects = projects.filter((p) => {
-    if (activeTab === 'All') return true;
-    return p.industryTag === activeTab;
+  // Client-side category filtering
+  const filteredProjects = projectsData.filter((project) => {
+    if (activeTab === 'All Projects') return true;
+    return project.categoryTag === activeTab;
   });
 
   return (
-    <div className="pt-28 pb-20 bg-[#080616] text-white min-h-screen">
+    <div className="pt-28 pb-24 bg-gradient-to-b from-[#FDFBF7] via-[#FAF6EC] to-[#F3EEE3] text-slate-800 min-h-screen font-sans selection:bg-[#0F172A] selection:text-white">
       <SEO
-        title="Portfolio Showcase"
-        description="Explore 6 real-world web projects for Blue-Collar, Healthcare, and E-Commerce businesses delivered in 48 hours globally."
+        title="Selected Work & Live Client Platforms | NEXVIX SofTech Solutions"
+        description="Explore live client platforms and custom web solutions built by NEXVIX SofTech Solutions for E-Commerce, Healthcare, Fitness, Dining, and Commercial businesses."
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Page Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-purple-300 font-bold text-xs uppercase tracking-widest bg-[#1a123d] px-4 py-1.5 rounded-full border border-[#35266e]">
-            Real Work, Real Results
-          </span>
-          <h1 className="font-heading font-extrabold text-4xl sm:text-5xl text-white mt-4">
-            Our Client Showcase
+        {/* Header Hero Section */}
+        <div className="text-center max-w-3xl mx-auto mb-14 pt-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FAF3E6] border border-[#E6DCCB] text-[#0F172A] text-xs font-semibold uppercase tracking-widest mb-4 shadow-sm">
+            <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+            <span>NEXVIX SofTech Solutions Showcase</span>
+          </div>
+
+          <h1 className="font-serif font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#0F172A] tracking-tight leading-[1.12]">
+            Selected Work & Live Client Platforms
           </h1>
-          <p className="text-slate-300 text-base mt-3 leading-relaxed">
-            High-performing React & Tailwind websites crafted for industry leaders worldwide. Filter by category below.
+
+          <p className="text-slate-600 text-base sm:text-lg mt-4 leading-relaxed font-normal">
+            High-converting digital experiences engineered for ambitious brands. Explore our live portfolio of custom e-commerce stores, medical practices, fitness platforms, and commercial web solutions.
           </p>
+
+          {/* Quick Stats Strip */}
+          <div className="mt-8 grid grid-cols-3 gap-4 max-w-xl mx-auto p-4 rounded-2xl bg-white/70 border border-[#E8E2D5] shadow-sm backdrop-blur-sm">
+            <div className="text-center">
+              <span className="font-serif font-bold text-2xl text-[#0F172A] block">100%</span>
+              <span className="text-[11px] text-slate-500 font-medium uppercase tracking-wider">Live & Functional</span>
+            </div>
+            <div className="text-center border-x border-[#E8E2D5]">
+              <span className="font-serif font-bold text-2xl text-[#0F172A] block">48 Hours</span>
+              <span className="text-[11px] text-slate-500 font-medium uppercase tracking-wider">Rapid Delivery</span>
+            </div>
+            <div className="text-center">
+              <span className="font-serif font-bold text-2xl text-[#0F172A] block">Global</span>
+              <span className="text-[11px] text-slate-500 font-medium uppercase tracking-wider">Client Standards</span>
+            </div>
+          </div>
         </div>
 
-        {/* Filter Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
-          {filterTabs.map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all duration-300 ${activeTab === tab
-                ? 'bg-[#6348f6] text-white shadow-md shadow-purple-900/50 scale-105'
-                : 'bg-[#120d29] text-slate-300 hover:text-white hover:bg-[#1f1745] border border-[#271d52]'
-              }`}
-            >
-              {tab}
-            </button>
-          ))}
+        {/* Editorial Filter Tabs */}
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-14">
+          {filterCategories.map((category) => {
+            const isActive = activeTab === category;
+            return (
+              <button
+                key={category}
+                onClick={() => setActiveTab(category)}
+                className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-250 cursor-pointer ${
+                  isActive
+                    ? 'bg-[#0F172A] text-[#FDFBF7] shadow-md scale-105 font-semibold'
+                    : 'bg-white text-slate-600 hover:text-[#0F172A] hover:bg-[#FAF6EC] border border-[#E5DFD3] shadow-sm'
+                }`}
+              >
+                {category}
+              </button>
+            );
+          })}
         </div>
 
-        {/* Showcase Grid (6 Projects with Dual Device Mockups & Soft Muted Pastel Backgrounds) */}
+        {/* Portfolio Projects Grid (Asymmetric Layout with Flagship Hero Tile) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project) => (
-            <BrowserMockup
+            <ProjectCard
               key={project.id}
-              url={project.url}
-              title={project.name}
-              imageSrc={project.image}
-              industryTag={project.industryTag}
-              description={project.description}
-              ambientColor={project.ambientColor}
-              onCardClick={() => setSelectedProject(project)}
+              project={project}
+              onCardClick={(proj) => setSelectedProject(proj)}
             />
           ))}
         </div>
 
+        {filteredProjects.length === 0 && (
+          <div className="text-center py-16 bg-white/60 rounded-3xl border border-[#E8E2D5] max-w-md mx-auto">
+            <p className="text-slate-500 text-sm">No projects found in this category.</p>
+            <button
+              onClick={() => setActiveTab('All Projects')}
+              className="mt-3 px-5 py-2 rounded-full bg-[#0F172A] text-white text-xs font-semibold"
+            >
+              View All Projects
+            </button>
+          </div>
+        )}
+
+        {/* Pillar Sub-Sections — Cohesive Editorial Light Theme */}
+        <div className="mt-24 pt-16 border-t border-[#E5DFD3]">
+          
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <span className="text-[#0F172A] font-semibold text-xs uppercase tracking-widest bg-white px-3.5 py-1.5 rounded-full border border-[#E2DCCE] shadow-sm">
+              ENGINEERING STANDARDS
+            </span>
+            <h2 className="font-serif font-bold text-3xl sm:text-4xl text-[#0F172A] mt-3">
+              Why NEXVIX SofTech Solutions Stands Apart
+            </h2>
+            <p className="text-slate-600 text-sm mt-2">
+              Every platform is custom-built with React, Tailwind CSS, and optimized for maximum conversion velocity.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-[#FFFCF9] border border-[#E8E2D5] rounded-2xl p-7 shadow-sm">
+              <div className="w-10 h-10 rounded-full bg-[#F4EFE6] flex items-center justify-center text-[#0F172A] mb-4">
+                <Layers className="w-5 h-5" />
+              </div>
+              <h3 className="font-serif font-bold text-xl text-[#0F172A] mb-2">
+                High-Converting E-Commerce Stores
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Tailored store design with portrait artwork previews, instant INR/USD currency flows, slide-out carts, and frictionless checkout paths.
+              </p>
+            </div>
+
+            <div className="bg-[#FFFCF9] border border-[#E8E2D5] rounded-2xl p-7 shadow-sm">
+              <div className="w-10 h-10 rounded-full bg-[#F4EFE6] flex items-center justify-center text-[#0F172A] mb-4">
+                <Award className="w-5 h-5" />
+              </div>
+              <h3 className="font-serif font-bold text-xl text-[#0F172A] mb-2">
+                Business & Medical Practice Platforms
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Calm, trust-centric healthcare & medical web architectures built to reassure patients, communicate clinical excellence, and drive bookings.
+              </p>
+            </div>
+
+            <div className="bg-[#FFFCF9] border border-[#E8E2D5] rounded-2xl p-7 shadow-sm">
+              <div className="w-10 h-10 rounded-full bg-[#F4EFE6] flex items-center justify-center text-[#0F172A] mb-4">
+                <Clock className="w-5 h-5" />
+              </div>
+              <h3 className="font-serif font-bold text-xl text-[#0F172A] mb-2">
+                48-Hour Rapid Delivery Engine
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                From initial kickoff to live deployment, NEXVIX SofTech Solutions delivers fully functional, production-ready web platforms within 48 hours.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
       </div>
 
-      {/* Project Detail Modal (Without Sample Link URL Button as requested) */}
+      {/* Project Detail Light Editorial Modal */}
       {selectedProject && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#040210]/80 backdrop-blur-md">
-          <div className="bg-[#0f0b24] border border-[#271d52] rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl relative">
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#0F172A]/50 backdrop-blur-sm animate-fadeIn"
+          onClick={() => setSelectedProject(null)}
+        >
+          <div 
+            className="bg-[#FDFBF7] border border-[#E2DCCE] rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl relative max-h-[90vh] flex flex-col"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Close Button */}
             <button
               onClick={() => setSelectedProject(null)}
-              className="absolute top-4 right-4 p-2 bg-[#1a1240] hover:bg-[#241858] rounded-full text-slate-300 hover:text-white z-30 transition-colors"
+              className="absolute top-4 right-4 p-2 bg-white hover:bg-[#FAF6EC] border border-[#E5DFD3] rounded-full text-slate-700 hover:text-[#0F172A] z-30 transition-colors shadow-sm"
+              aria-label="Close detail modal"
             >
               <X className="w-5 h-5" />
             </button>
 
-            <div className="p-6 sm:p-8 bg-[#090717] border-b border-[#241c4a] relative">
-              <div className="flex gap-2 mb-4">
-                <span className="px-3 py-1 bg-[#6348f6] text-white font-bold text-xs rounded-full shadow-sm">
-                  {selectedProject.industryTag}
+            {/* Modal Content Scrollable */}
+            <div className="overflow-y-auto p-6 sm:p-8">
+              
+              <div className="flex items-center gap-2 mb-3">
+                <span className="px-3 py-1 rounded-full text-xs font-medium border bg-[#FAF0D9] text-[#7E520A] border-[#F3DBA7]">
+                  {selectedProject.categoryTag}
+                </span>
+                <span className="text-xs font-mono text-slate-400">
+                  NEXVIX SofTech Solutions
                 </span>
               </div>
-              <div className="max-w-xl mx-auto rounded-xl overflow-hidden shadow-lg border border-[#2b2157]">
-                <img
-                  src={selectedProject.image}
-                  alt={selectedProject.name}
-                  className="w-full h-auto object-cover object-top"
-                />
-              </div>
-            </div>
 
-            <div className="p-6 sm:p-8">
-              <h3 className="font-heading font-extrabold text-2xl text-white mb-2">
+              <h2 className="font-serif font-bold text-3xl text-[#0F172A] mb-3">
                 {selectedProject.name}
-              </h3>
-              <p className="text-slate-300 text-sm leading-relaxed mb-4">
+              </h2>
+
+              <p className="text-slate-600 text-sm leading-relaxed mb-6">
                 {selectedProject.description}
               </p>
-              <div className="p-4 bg-[#090717] rounded-2xl border border-[#211847] text-xs text-slate-300 leading-relaxed mb-6">
-                <span className="font-extrabold text-purple-400 block mb-1">Technical Highlights:</span>
-                {selectedProject.fullDetails}
+
+              {/* Browser Preview Frame inside Modal */}
+              <div className="overflow-hidden rounded-2xl border border-[#E2DCCE] bg-[#FAF8F3] shadow-md mb-6">
+                <div className="bg-[#EFEAE1] px-4 py-2.5 flex items-center gap-3 border-b border-[#E2DCCE]">
+                  <div className="flex items-center gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#27C93F]"></div>
+                  </div>
+                  <div className="bg-[#F8F5EE] border border-[#E0D8C8] px-3 py-0.5 rounded-full text-xs font-mono text-stone-600 truncate">
+                    {selectedProject.url}
+                  </div>
+                </div>
+                {selectedProject.video ? (
+                  <div className="relative aspect-[16/10] bg-black">
+                    <video
+                      src={selectedProject.video}
+                      autoPlay={true}
+                      loop={true}
+                      muted={true}
+                      controls={true}
+                      playsInline={true}
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
+                ) : (
+                  <img
+                    src={selectedProject.image}
+                    alt={selectedProject.name}
+                    className="w-full h-auto object-cover object-top max-h-[380px]"
+                  />
+                )}
               </div>
 
-              {/* Modal Actions - NO Sample Link URL Button as requested */}
-              <div className="flex items-center justify-end">
+              {/* Technical Highlights Box */}
+              {selectedProject.fullDetails && (
+                <div className="p-5 bg-[#F5F0E6] rounded-2xl border border-[#E5DFD3] text-xs text-slate-700 leading-relaxed mb-6">
+                  <span className="font-bold text-[#0F172A] block mb-1 text-sm">
+                    Platform Architecture & Features:
+                  </span>
+                  {selectedProject.fullDetails}
+                </div>
+              )}
+
+              {/* Modal Actions */}
+              <div className="flex items-center justify-between gap-4 pt-2 border-t border-[#E8E2D5]">
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="px-8 py-3 bg-[#6348f6] hover:bg-[#5134e8] text-white font-bold text-sm rounded-xl shadow-md transition-all"
+                  className="px-6 py-2.5 bg-white border border-[#E5DFD3] text-slate-700 hover:text-[#0F172A] font-semibold text-xs rounded-full shadow-sm"
                 >
                   Close
                 </button>
+
+                <a
+                  href={selectedProject.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-7 py-2.5 bg-[#0F172A] hover:bg-[#1E293B] text-white font-semibold text-xs rounded-full shadow-md transition-all hover:scale-105"
+                >
+                  <span>View Live Site</span>
+                  <ExternalLink className="w-4 h-4" />
+                </a>
               </div>
+
             </div>
 
           </div>
@@ -192,5 +266,3 @@ export default function Showcase() {
     </div>
   );
 }
-
-

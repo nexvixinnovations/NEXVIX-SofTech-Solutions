@@ -34,6 +34,7 @@ export default {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
         heading: ['Montserrat', 'sans-serif'],
+        serif: ['"Playfair Display"', 'Georgia', '"Times New Roman"', 'serif'],
       },
       boxShadow: {
         'purple-glow': '0 0 50px -10px rgba(99, 72, 246, 0.4)',
