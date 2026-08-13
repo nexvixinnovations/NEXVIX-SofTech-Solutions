@@ -45,10 +45,10 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Brand Name Text (No Image Logo) */}
+          {/* Brand Name Text */}
           <Link
             to="/"
-            className={`font-serif font-black text-lg sm:text-xl tracking-tight transition-colors ${
+            className={`whitespace-nowrap font-serif font-black text-base sm:text-lg lg:text-xl tracking-tight transition-colors ${
               isHomePage ? 'text-white hover:text-purple-300' : 'text-[#0F172A] hover:text-purple-700'
             }`}
           >
@@ -105,15 +105,7 @@ export default function Header() {
           </div>
 
           {/* Mobile Menu Toggle Button */}
-          <div className="lg:hidden flex items-center justify-between w-full">
-            <Link
-              to="/"
-              className={`font-serif font-black text-base tracking-tight ${
-                isHomePage ? 'text-white' : 'text-[#0F172A]'
-              }`}
-            >
-              NEXVIX SofTech Solutions
-            </Link>
+          <div className="lg:hidden flex items-center">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={`p-2 focus:outline-none ${isHomePage ? 'text-slate-300 hover:text-purple-400' : 'text-slate-800 hover:text-purple-600'}`}
