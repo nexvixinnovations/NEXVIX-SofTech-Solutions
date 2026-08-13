@@ -77,8 +77,8 @@ export default function Home() {
         description="NEXVIX SofTech Solutions creates high-performance, modern and scalable websites for global clients delivered in 48 hours."
       />
 
-      {/* Hero Section — Full Video Background */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Hero Section — Video Background with Sharp Angled Shape & Glowing Border */}
+      <section className="relative min-h-screen flex items-center overflow-hidden [clip-path:polygon(0_0,_100%_0,_100%_93%,_0_100%)] border-b-4 border-[#6348f6]/80 shadow-[0_20px_50px_rgba(99,72,246,0.3)]">
 
         {/* ── FULL-BLEED BACKGROUND VIDEO ── */}
         <div className="absolute inset-0 z-0">
@@ -92,10 +92,10 @@ export default function Home() {
             className="w-full h-full object-cover"
             style={{ pointerEvents: 'none' }}
           />
-          {/* Dark gradient overlay — removes blue bg, keeps text readable */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#080616]/90 via-[#080616]/60 to-[#080616]/20" />
-          {/* Bottom fade for smooth section transition */}
-          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#080616] to-transparent" />
+          {/* Dark gradient overlay & Sharp Frame Borders */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#080616]/95 via-[#080616]/70 to-[#080616]/30" />
+          {/* Bottom fade for smooth sharp shape transition */}
+          <div className="absolute bottom-0 left-0 right-0 h-36 bg-gradient-to-t from-[#080616] to-transparent" />
         </div>
 
         {/* ── HERO CONTENT ── */}

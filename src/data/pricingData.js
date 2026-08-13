@@ -139,6 +139,51 @@ export const pricingCategories = [
     ]
   },
   {
+    category: 'Custom SaaS Development',
+    shortName: 'SaaS Packages',
+    tiers: [
+      {
+        tierName: 'MVP SaaS Package',
+        delivery: '5-7 Days Delivery',
+        popular: true,
+        description: 'Complete MVP SaaS platform built for rapid launch, user acquisition, and investor demos.',
+        features: [
+          'Custom React / Tailwind SaaS Frontend',
+          'Secure User Auth & User Management',
+          'Cloud Database & API Backend',
+          'Stripe Subscription / Billing Integration',
+          '5-7 Days Rapid Delivery Guarantee',
+          '100% Full Source Code & IP Ownership'
+        ],
+        prices: {
+          USD: { original: '$4,500', offer: '$3,999', save: '$501', offerNum: 3999, originalNum: 4500 },
+          GBP: { original: '£3,450', offer: '£3,070', save: '£380', offerNum: 3070, originalNum: 3450 },
+          AUD: { original: 'A$6,450', offer: 'A$5,730', save: 'A$720', offerNum: 5730, originalNum: 6450 },
+          CAD: { original: 'C$6,300', offer: 'C$5,600', save: 'C$700', offerNum: 5600, originalNum: 6300 }
+        }
+      },
+      {
+        tierName: 'Full Scale SaaS Platform',
+        delivery: '10-14 Days Delivery',
+        description: 'Full-scale enterprise SaaS product ecosystem with admin portal, team roles, and multi-tenant scaling.',
+        features: [
+          'Full Multi-Tenant SaaS Architecture',
+          'Comprehensive Admin Control Center',
+          'Automated Workflows & Email Webhooks',
+          'Advanced Business Analytics & Metrics',
+          'Multi-Tier Billing & Role Authorization',
+          'Dedicated Engineer Support & SLA'
+        ],
+        prices: {
+          USD: { original: '$12,999', offer: '$9,999', save: '$3,000', offerNum: 9999, originalNum: 12999 },
+          GBP: { original: '£9,995', offer: '£7,690', save: '£2,305', offerNum: 7690, originalNum: 9995 },
+          AUD: { original: 'A$18,650', offer: 'A$14,350', save: 'A$4,300', offerNum: 14350, originalNum: 18650 },
+          CAD: { original: 'C$18,200', offer: 'C$13,990', save: 'C$4,210', offerNum: 13990, originalNum: 18200 }
+        }
+      }
+    ]
+  },
+  {
     category: 'Web App',
     shortName: 'Web App',
     tiers: [
@@ -164,7 +209,7 @@ export const pricingCategories = [
       {
         tierName: 'Standard App',
         delivery: '10-14 Days Delivery',
-        popular: true,
+        popular: false,
         description: 'Full SaaS / enterprise web application with admin portal, billing, role management, and analytics.',
         features: [
           'Full Enterprise Web Application Ecosystem',

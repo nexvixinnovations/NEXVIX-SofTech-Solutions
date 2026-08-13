@@ -22,9 +22,22 @@ export const filterCategories = [
 
 export const projectsData = [
   {
+    id: 'madurai-food-corner',
+    name: 'Madurai Food Corner',
+    url: null,
+    hasLiveLink: false,
+    categoryTag: 'Restaurant & Catering',
+    description: 'Authentic South Indian restaurant & catering platform featuring interactive menu, online combo offers, and instant order booking.',
+    image: '/showcase/madurai-food-corner.png',
+    video: 'https://res.cloudinary.com/ji86uvi3/video/upload/v1786465551/Madurai_sji3uu.mp4',
+    isFlagship: true,
+    fullDetails: 'Custom food service web app featuring interactive video walkthrough of the ordering flow, daily special menu highlights, Kari Dosa / Jigarthanda spotlight, and direct WhatsApp ordering.'
+  },
+  {
     id: 'digital-art-studio',
     name: 'Digital Art Studio',
     url: 'https://digitalartstudio.pages.dev/',
+    hasLiveLink: true,
     categoryTag: 'E-commerce Store',
     description: 'Custom e-commerce store built for the Indian market — personalized watercolor portrait products with before/after previews, live pricing (INR), and streamlined checkout flow.',
     image: '/showcase/digital-art-studio.png',
@@ -35,6 +48,7 @@ export const projectsData = [
     id: 'serene-health',
     name: 'Serene Health',
     url: 'https://serene-health.netlify.app/',
+    hasLiveLink: true,
     categoryTag: 'Business Website (Medical)',
     description: 'A calm, trust-focused website design for a medical/healthcare practice, built to convert visitors into patient inquiries.',
     image: '/showcase/serene-health.png',
@@ -45,6 +59,7 @@ export const projectsData = [
     id: 'nexvix-gym',
     name: 'Nexvix Gym',
     url: 'https://nexvix-gym.netlify.app/',
+    hasLiveLink: true,
     categoryTag: 'Business Website (Fitness)',
     description: 'A bold, high-energy website design for a gym/fitness brand, focused on class signups and membership conversions.',
     image: '/showcase/nexvix-gym.png',
@@ -55,6 +70,7 @@ export const projectsData = [
     id: 'nexvix-ecommerce',
     name: 'Nexvix E-commerce',
     url: 'https://nexvix-ecommerce.netlify.app/',
+    hasLiveLink: true,
     categoryTag: 'E-commerce Store',
     description: 'A modern e-commerce storefront sample with product grid, cart, and checkout flow.',
     image: '/showcase/nexvix-ecommerce.png',
@@ -62,20 +78,10 @@ export const projectsData = [
     fullDetails: 'Luxury editorial apparel showcase featuring dynamic product filtering, slide-out cart draw, lookbook gallery, and multi-currency readiness.'
   },
   {
-    id: 'madurai-food-corner',
-    name: 'Madurai Food Corner',
-    url: 'https://maduraifoodcorner.netlify.app/',
-    categoryTag: 'Restaurant & Catering',
-    description: 'Authentic South Indian restaurant & catering platform featuring interactive menu, online combo offers, and instant order booking.',
-    image: '/showcase/madurai-food-corner.png',
-    video: 'https://res.cloudinary.com/ji86uvi3/video/upload/v1786465551/Madurai_sji3uu.mp4',
-    isFlagship: false,
-    fullDetails: 'Custom food service web app featuring interactive video walkthrough of the ordering flow, daily special menu highlights, Kari Dosa / Jigarthanda spotlight, and direct WhatsApp ordering.'
-  },
-  {
     id: 'sunpeak-solar',
     name: 'SunPeak Solar Co.',
-    url: 'https://sunpeaksolar.netlify.app/',
+    url: null,
+    hasLiveLink: false,
     categoryTag: 'Commercial Services',
     description: 'High-converting solar lead generation platform designed for homeowners seeking renewable energy installations.',
     image: '/showcase/SunPeak Solar Co. MU.png',
@@ -85,11 +91,23 @@ export const projectsData = [
   {
     id: 'summit-roof-air',
     name: 'Summit Roof & Air',
-    url: 'https://summitroofair.netlify.app/',
+    url: null,
+    hasLiveLink: false,
     categoryTag: 'Commercial Services',
     description: 'Commercial and residential roofing & HVAC service engine built for rapid contractor emergency lead response.',
     image: '/showcase/Summit Roof & Air MU.png',
     isFlagship: false,
     fullDetails: 'Features 1-click emergency service dispatching, customer review integration, and localized contractor SEO optimization.'
+  },
+  {
+    id: 'harley-street-dental',
+    name: 'Harley Street Dental Studio',
+    url: null,
+    hasLiveLink: false,
+    categoryTag: 'Business Website (Medical)',
+    description: 'Luxury dental clinic web platform designed for Harley Street practitioners — features online appointment booking, doctor profiles, treatments overview, and patient trust testimonials.',
+    image: '/showcase/Harley Street Dental Studio.png',
+    isFlagship: false,
+    fullDetails: 'Engineered with Harley Street clinical aesthetic, appointment inquiry workflow, specialty treatment showcases, and patient review integrations.'
   }
 ];

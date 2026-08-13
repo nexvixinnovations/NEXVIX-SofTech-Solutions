@@ -30,7 +30,7 @@ export default function Showcase() {
             <span>NEXVIX SofTech Solutions Showcase</span>
           </div>
 
-          <h1 className="font-serif font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#0F172A] tracking-tight leading-[1.12]">
+          <h1 className="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-[#0F172A] tracking-tight leading-[1.08] bg-gradient-to-r from-slate-900 via-[#3b2a82] to-slate-900 bg-clip-text text-transparent">
             Selected Work & Live Client Platforms
           </h1>
 
@@ -75,8 +75,8 @@ export default function Showcase() {
           })}
         </div>
 
-        {/* Portfolio Projects Grid (Asymmetric Layout with Flagship Hero Tile) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Portfolio Projects Grid (2-Column Grid with Full-Width Flagships #1 & #2) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {filteredProjects.map((project) => (
             <ProjectCard
               key={project.id}
@@ -153,6 +153,116 @@ export default function Showcase() {
 
         </div>
 
+        {/* Continuous Slow Sliding Client Reviews Column Section */}
+        <div className="mt-24 pt-16 border-t border-[#E5DFD3] overflow-hidden">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <span className="text-[#0F172A] font-semibold text-xs uppercase tracking-widest bg-white px-3.5 py-1.5 rounded-full border border-[#E2DCCE] shadow-sm">
+              CLIENT TESTIMONIALS
+            </span>
+            <h2 className="font-serif font-bold text-3xl sm:text-4xl text-[#0F172A] mt-3">
+              What Our Platform Clients Say
+            </h2>
+            <p className="text-slate-600 text-sm mt-2">
+              Continuous feedback from verified business founders and project leads worldwide.
+            </p>
+          </div>
+
+          {/* Marquee Ticker Container */}
+          <div className="relative w-full overflow-hidden py-4">
+            <div className="animate-marquee-slow flex gap-6">
+              {[
+                {
+                  name: 'Rohan Sundaram',
+                  project: 'Madurai Food Corner',
+                  role: 'Restaurant Owner',
+                  comment: 'The interactive South Indian menu and instant WhatsApp ordering platform increased catering inquiries by 180%. The video walkthrough and speed give us a massive edge!'
+                },
+                {
+                  name: 'Ananya Sharma',
+                  project: 'Digital Art Studio',
+                  role: 'E-Commerce Founder',
+                  comment: 'NEXVIX built our watercolor portrait e-commerce store with live INR pricing & before/after artwork sliders. Online portrait sales doubled in 30 days.'
+                },
+                {
+                  name: 'Marcus Vance',
+                  project: 'SunPeak Solar Co.',
+                  role: 'Solar Director',
+                  comment: 'Inbound quote inquiries surged by over 140% in our first month after launching the SunPeak platform. Sub-second load times!'
+                },
+                {
+                  name: 'Dr. Sarah Jenkins',
+                  project: 'Serene Health',
+                  role: 'Medical Director',
+                  comment: 'Patient online appointment bookings doubled since launching our calm, trust-focused healthcare portal. Exceptional design and SLA turnaround!'
+                },
+                {
+                  name: 'Alex Turner',
+                  project: 'Nexvix Gym',
+                  role: 'Fitness Manager',
+                  comment: 'High-energy fitness platform with direct free-trial booking calls to action. The 48-hour delivery SLA was strictly met with zero compromise on quality.'
+                },
+                /* Duplicate set for infinite marquee loop */
+                {
+                  name: 'Rohan Sundaram',
+                  project: 'Madurai Food Corner',
+                  role: 'Restaurant Owner',
+                  comment: 'The interactive South Indian menu and instant WhatsApp ordering platform increased catering inquiries by 180%. The video walkthrough and speed give us a massive edge!'
+                },
+                {
+                  name: 'Ananya Sharma',
+                  project: 'Digital Art Studio',
+                  role: 'E-Commerce Founder',
+                  comment: 'NEXVIX built our watercolor portrait e-commerce store with live INR pricing & before/after artwork sliders. Online portrait sales doubled in 30 days.'
+                },
+                {
+                  name: 'Marcus Vance',
+                  project: 'SunPeak Solar Co.',
+                  role: 'Solar Director',
+                  comment: 'Inbound quote inquiries surged by over 140% in our first month after launching the SunPeak platform. Sub-second load times!'
+                },
+                {
+                  name: 'Dr. Sarah Jenkins',
+                  project: 'Serene Health',
+                  role: 'Medical Director',
+                  comment: 'Patient online appointment bookings doubled since launching our calm, trust-focused healthcare portal. Exceptional design and SLA turnaround!'
+                },
+                {
+                  name: 'Alex Turner',
+                  project: 'Nexvix Gym',
+                  role: 'Fitness Manager',
+                  comment: 'High-energy fitness platform with direct free-trial booking calls to action. The 48-hour delivery SLA was strictly met with zero compromise on quality.'
+                }
+              ].map((rev, rIdx) => (
+                <div 
+                  key={rIdx} 
+                  className="w-[320px] sm:w-[380px] shrink-0 bg-[#FFFCF9] border border-[#E8E2D5] rounded-2xl p-6 shadow-sm flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="flex items-center justify-between gap-2 mb-3">
+                      <span className="text-[11px] font-bold text-[#7E520A] bg-[#FAF0D9] border border-[#F3DBA7] px-2.5 py-0.5 rounded-full">
+                        {rev.project}
+                      </span>
+                      <span className="text-xs text-amber-500 font-bold">★★★★★</span>
+                    </div>
+                    <p className="text-xs text-slate-700 leading-relaxed italic mb-4">
+                      "{rev.comment}"
+                    </p>
+                  </div>
+                  <div className="pt-3 border-t border-[#F0EAE0] flex items-center justify-between">
+                    <div>
+                      <h4 className="font-bold text-xs text-[#0F172A]">{rev.name}</h4>
+                      <span className="text-[10px] text-slate-500">{rev.role}</span>
+                    </div>
+                    <span className="text-[10px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                      Verified
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
       </div>
 
       {/* Project Detail Light Editorial Modal */}
@@ -203,7 +313,7 @@ export default function Showcase() {
                     <div className="w-2.5 h-2.5 rounded-full bg-[#27C93F]"></div>
                   </div>
                   <div className="bg-[#F8F5EE] border border-[#E0D8C8] px-3 py-0.5 rounded-full text-xs font-mono text-stone-600 truncate">
-                    {selectedProject.url}
+                    {selectedProject.url || 'client-platform.nexvix.internal'}
                   </div>
                 </div>
                 {selectedProject.video ? (
@@ -246,15 +356,21 @@ export default function Showcase() {
                   Close
                 </button>
 
-                <a
-                  href={selectedProject.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-7 py-2.5 bg-[#0F172A] hover:bg-[#1E293B] text-white font-semibold text-xs rounded-full shadow-md transition-all hover:scale-105"
-                >
-                  <span>View Live Site</span>
-                  <ExternalLink className="w-4 h-4" />
-                </a>
+                {selectedProject.hasLiveLink && selectedProject.url ? (
+                  <a
+                    href={selectedProject.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-7 py-2.5 bg-[#0F172A] hover:bg-[#1E293B] text-white font-semibold text-xs rounded-full shadow-md transition-all hover:scale-105"
+                  >
+                    <span>View Live Site</span>
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                ) : (
+                  <span className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-[#FAF0D9] text-[#7E520A] text-xs font-bold border border-[#F3DBA7]">
+                    <span>Private Client Platform</span>
+                  </span>
+                )}
               </div>
 
             </div>

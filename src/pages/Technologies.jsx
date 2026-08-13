@@ -9,9 +9,21 @@ export default function Technologies() {
       icon: Code2,
       desc: "Modern standard web languages powering fast, scalable interfaces.",
       items: [
-        { name: "JavaScript (ES6+)", desc: "Asynchronous, modern JS logic for dynamic user interaction." },
-        { name: "HTML5", desc: "Semantic, accessible HTML markup structured for high SEO performance." },
-        { name: "CSS3 / Modern Styling", desc: "Custom HSL design tokens, flexbox/grid, and micro-animations." }
+        { 
+          name: "JavaScript (ES6+)", 
+          desc: "Asynchronous, modern JS logic for dynamic user interaction.",
+          image: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
+        },
+        { 
+          name: "HTML5 Markup", 
+          desc: "Semantic, accessible HTML markup structured for high SEO performance.",
+          image: "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg"
+        },
+        { 
+          name: "CSS3 / Modern Styling", 
+          desc: "Custom HSL design tokens, flexbox/grid, and micro-animations.",
+          image: "https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg"
+        }
       ]
     },
     {
@@ -19,21 +31,48 @@ export default function Technologies() {
       icon: Layers,
       desc: "Cutting-edge UI frameworks enabling sub-second component renders.",
       items: [
-        { name: "React.js (v18)", desc: "Component-driven reactive architecture for blazing-fast page loads." },
-        { name: "Tailwind CSS (v3)", desc: "Utility-first design system with curated gradient palettes and glassmorphism." },
-        { name: "Vite", desc: "Next-generation frontend tooling with instant HMR and optimized production builds." },
-        { name: "React Router DOM", desc: "Seamless single-page client routing with instant view transitions." },
-        { name: "Lucide React", desc: "Pixel-perfect vector icon library integrated for ultra-clean iconography." }
+        { 
+          name: "React.js (v18)", 
+          desc: "Component-driven reactive architecture for blazing-fast page loads.",
+          image: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
+        },
+        { 
+          name: "Tailwind CSS (v3)", 
+          desc: "Utility-first design system with curated gradient palettes and glassmorphism.",
+          image: "https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg"
+        },
+        { 
+          name: "Vite Bundler", 
+          desc: "Next-generation frontend tooling with instant HMR and optimized production builds.",
+          image: "https://raw.githubusercontent.com/devicons/devicon/master/icons/vite/vite-original.svg"
+        },
+        { 
+          name: "React Router DOM", 
+          desc: "Seamless single-page client routing with instant view transitions.",
+          image: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
+        }
       ]
     },
     {
-      title: "Backend Services & APIs",
+      title: "Backend Services & Infrastructure",
       icon: Server,
       desc: "Secure, reliable server endpoints and cloud form handling.",
       items: [
-        { name: "Node.js Environment", desc: "High-performance JavaScript runtime for build orchestration and tooling." },
-        { name: "FormSubmit Endpoint API", desc: "Direct AJAX contact form transmission directly to inbox." },
-        { name: "REST APIs & JSON", desc: "Structured data exchange for dynamic review filtering and analytics." }
+        { 
+          name: "Node.js Environment", 
+          desc: "High-performance JavaScript runtime for build orchestration and tooling.",
+          image: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg"
+        },
+        { 
+          name: "FormSubmit Endpoint API", 
+          desc: "Direct AJAX contact form transmission directly to inbox.",
+          image: "https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg"
+        },
+        { 
+          name: "REST APIs & JSON Data", 
+          desc: "Structured data exchange for dynamic review filtering and analytics.",
+          image: "https://raw.githubusercontent.com/devicons/devicon/master/icons/json/json-original.svg"
+        }
       ]
     },
     {
@@ -41,17 +80,24 @@ export default function Technologies() {
       icon: ShieldCheck,
       desc: "Built-in speed optimization and global web safety compliance.",
       items: [
-        { name: "Lighthouse 95+ Optimization", desc: "Aggressive asset compression and mobile-first speed architecture." },
-        { name: "SSL / HTTPS Ready", desc: "Encrypted data transmission across all client interactions." },
-        { name: "Cross-Browser Compatibility", desc: "Verified rendering on Chrome, Safari, Firefox, and Edge across iOS and Android." }
+        { 
+          name: "Lighthouse 95+ Score", 
+          desc: "Aggressive asset compression and mobile-first speed architecture.",
+          image: "https://raw.githubusercontent.com/devicons/devicon/master/icons/chrome/chrome-original.svg"
+        },
+        { 
+          name: "SSL / HTTPS Encryption", 
+          desc: "Encrypted data transmission across all client interactions.",
+          image: "https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg"
+        }
       ]
     }
   ];
 
   return (
-    <div className="pt-28 pb-20 bg-[#080616] text-white min-h-screen">
+    <div className="pt-28 pb-20 bg-gradient-to-b from-[#FDFBF7] via-[#FAF6EC] to-[#F3EEE3] text-slate-800 min-h-screen">
       <SEO 
-        title="Technologies & Languages Used" 
+        title="Technologies & Languages Used | NEXVIX SofTech Solutions" 
         description="Explore the languages, frameworks, and modern web stack powering NEXVIX SofTech Solutions applications."
       />
 
@@ -59,13 +105,13 @@ export default function Technologies() {
         
         {/* Page Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-purple-300 font-bold text-xs uppercase tracking-widest bg-[#1a123d] px-4 py-1.5 rounded-full border border-[#35266e]">
+          <span className="text-[#0F172A] font-bold text-xs uppercase tracking-widest bg-white px-4 py-1.5 rounded-full border border-[#E5DFD3] shadow-sm">
             OUR TECH STACK
           </span>
-          <h1 className="font-heading font-extrabold text-4xl sm:text-5xl text-white mt-4">
+          <h1 className="font-heading font-black text-4xl sm:text-5xl text-[#0F172A] mt-4 bg-gradient-to-r from-slate-900 via-[#3b2a82] to-slate-900 bg-clip-text text-transparent">
             Languages & Technologies Used
           </h1>
-          <p className="text-slate-300 text-base mt-3 leading-relaxed">
+          <p className="text-slate-600 text-base mt-3 leading-relaxed">
             We engineer high-performance web applications using industry-leading modern frameworks, languages, and build tools.
           </p>
         </div>
@@ -77,32 +123,40 @@ export default function Technologies() {
             return (
               <div 
                 key={idx} 
-                className="bg-[#120d29] border border-[#271d52] rounded-3xl p-8 shadow-xl hover:border-purple-500/60 transition-all duration-300"
+                className="bg-[#FFFCF9] border border-[#E8E2D5] rounded-3xl p-8 shadow-sm hover:shadow-md transition-all duration-300"
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-2xl bg-[#21174d] border border-[#3b2a82] flex items-center justify-center text-purple-400">
+                  <div className="w-12 h-12 rounded-2xl bg-[#FAF3E6] border border-[#E6DCCB] flex items-center justify-center text-[#0F172A]">
                     <Icon className="w-6 h-6" />
                   </div>
                   <div>
-                    <h3 className="font-heading font-extrabold text-xl text-white">
+                    <h3 className="font-serif font-bold text-xl text-[#0F172A]">
                       {cat.title}
                     </h3>
-                    <p className="text-xs text-slate-400 mt-0.5">
+                    <p className="text-xs text-slate-500 mt-0.5">
                       {cat.desc}
                     </p>
                   </div>
                 </div>
 
-                <div className="space-y-4 pt-4 border-t border-[#1f1745]">
+                <div className="space-y-4 pt-4 border-t border-[#E8E2D5]">
                   {cat.items.map((item, itemIdx) => (
-                    <div key={itemIdx} className="bg-[#090717] border border-[#211847] p-4 rounded-2xl">
-                      <h4 className="font-heading font-bold text-sm text-purple-300 flex items-center gap-2">
-                        <Zap className="w-4 h-4 text-purple-400 shrink-0" />
-                        <span>{item.name}</span>
-                      </h4>
-                      <p className="text-xs text-slate-300 mt-1 leading-relaxed">
-                        {item.desc}
-                      </p>
+                    <div key={itemIdx} className="bg-white border border-[#E5DFD3] p-4 rounded-2xl flex items-start gap-3 shadow-xs">
+                      {item.image && (
+                        <img 
+                          src={item.image} 
+                          alt={item.name} 
+                          className="w-8 h-8 object-contain shrink-0 mt-0.5 p-1 bg-slate-50 rounded-lg border border-slate-100" 
+                        />
+                      )}
+                      <div>
+                        <h4 className="font-heading font-bold text-sm text-[#0F172A] flex items-center gap-2">
+                          <span>{item.name}</span>
+                        </h4>
+                        <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                          {item.desc}
+                        </p>
+                      </div>
                     </div>
                   ))}
                 </div>

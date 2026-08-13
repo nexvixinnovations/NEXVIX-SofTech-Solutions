@@ -65,7 +65,7 @@ export default function Reviews() {
   ).toFixed(1);
 
   return (
-    <div className="pt-28 pb-20 bg-[#080616] text-white min-h-screen">
+    <div className="pt-28 pb-20 bg-gradient-to-b from-[#FDFBF7] via-[#FAF6EC] to-[#F3EEE3] text-slate-800 min-h-screen">
 
       <SEO 
         title="Client Reviews & Case Testimonials | NEXVIX SofTech Solutions" 
@@ -76,32 +76,32 @@ export default function Reviews() {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1a123d] border border-[#35266e] text-purple-300 font-semibold text-xs uppercase tracking-widest mb-4 shadow-sm">
-            <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#E5DFD3] text-[#0F172A] font-bold text-xs uppercase tracking-widest mb-4 shadow-sm">
+            <Star className="w-4 h-4 fill-amber-500 text-amber-500" />
             <span>Verified Client Feedback</span>
           </div>
 
-          <h1 className="font-heading font-extrabold text-4xl sm:text-5xl text-white">
+          <h1 className="font-heading font-black text-4xl sm:text-5xl text-[#0F172A] bg-gradient-to-r from-slate-900 via-[#3b2a82] to-slate-900 bg-clip-text text-transparent">
             Client Success Stories
           </h1>
           
-          <p className="text-slate-300 text-base mt-3 max-w-xl mx-auto">
+          <p className="text-slate-600 text-base mt-3 max-w-xl mx-auto">
             Read real feedback from business founders and managers who built their web platforms with NEXVIX SofTech Solutions.
           </p>
 
           {/* Average Rating Badge */}
-          <div className="mt-6 inline-flex flex-col sm:flex-row items-center gap-4 p-5 rounded-3xl bg-[#120d29] border border-[#271d52] shadow-lg">
+          <div className="mt-6 inline-flex flex-col sm:flex-row items-center gap-4 p-5 rounded-3xl bg-[#FFFCF9] border border-[#E8E2D5] shadow-sm">
             <div className="flex items-center gap-1">
               {[1, 2, 3, 4, 5].map((s) => (
                 <Star 
                   key={s} 
-                  className="w-6 h-6 text-amber-400 fill-amber-400" 
+                  className="w-6 h-6 text-amber-500 fill-amber-500" 
                 />
               ))}
             </div>
             <div className="text-left">
-              <span className="font-heading font-extrabold text-2xl text-white">{avgRating} / 5.0 Rating</span>
-              <span className="text-xs text-slate-400 block">Calculated from 100% verified client reviews</span>
+              <span className="font-serif font-bold text-2xl text-[#0F172A]">{avgRating} / 5.0 Rating</span>
+              <span className="text-xs text-slate-500 block">Calculated from 100% verified client reviews</span>
             </div>
           </div>
         </div>
@@ -111,15 +111,15 @@ export default function Reviews() {
           {reviews.map((rev) => (
             <div 
               key={rev.id}
-              className="bg-[#120d29] border border-[#271d52] p-6 sm:p-8 rounded-3xl flex flex-col justify-between shadow-xl hover:border-purple-500/50 transition-all duration-300 relative group"
+              className="bg-[#FFFCF9] border border-[#E8E2D5] p-6 sm:p-8 rounded-3xl flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300 relative group"
             >
               <div>
                 {/* Project Tag Banner */}
-                <div className="flex items-center justify-between gap-2 mb-4 pb-3 border-b border-[#1f1745]">
-                  <span className="text-xs font-extrabold text-purple-300 bg-[#1a1240] px-3 py-1 rounded-full border border-[#34236e]">
+                <div className="flex items-center justify-between gap-2 mb-4 pb-3 border-b border-[#F0EAE0]">
+                  <span className="text-xs font-bold text-[#7E520A] bg-[#FAF0D9] px-3 py-1 rounded-full border border-[#F3DBA7]">
                     {rev.project}
                   </span>
-                  <span className="text-[11px] font-medium text-slate-400">
+                  <span className="text-[11px] font-medium text-slate-500">
                     {rev.category}
                   </span>
                 </div>
@@ -129,14 +129,14 @@ export default function Reviews() {
                   <img 
                     src={rev.avatar} 
                     alt={rev.name} 
-                    className="w-11 h-11 rounded-full object-cover border border-purple-500/50" 
+                    className="w-11 h-11 rounded-full object-cover border border-[#E2DCCE]" 
                     loading="lazy"
                   />
                   <div>
-                    <h4 className="font-heading font-extrabold text-lg text-white group-hover:text-purple-300 transition-colors">
+                    <h4 className="font-serif font-bold text-lg text-[#0F172A] group-hover:text-purple-700 transition-colors">
                       {rev.name}
                     </h4>
-                    <span className="text-[11px] font-semibold text-emerald-400 flex items-center gap-1">
+                    <span className="text-[11px] font-semibold text-emerald-700 flex items-center gap-1">
                       <CheckCircle2 className="w-3.5 h-3.5" />
                       Verified Platform Client
                     </span>
@@ -144,18 +144,18 @@ export default function Reviews() {
                 </div>
 
                 {/* 2. Rating */}
-                <div className="flex items-center gap-1 mb-4 bg-[#1a123d] px-3 py-1 rounded-full border border-[#34246e] w-fit">
+                <div className="flex items-center gap-1 mb-4 bg-[#FAF6EC] px-3 py-1 rounded-full border border-[#E5DFD3] w-fit">
                   {[...Array(5)].map((_, i) => (
                     <Star 
                       key={i} 
-                      className="w-3.5 h-3.5 text-amber-400 fill-amber-400" 
+                      className="w-3.5 h-3.5 text-amber-500 fill-amber-500" 
                     />
                   ))}
-                  <span className="text-xs font-bold text-amber-300 ml-1">5.0 / 5</span>
+                  <span className="text-xs font-bold text-[#0F172A] ml-1">5.0 / 5</span>
                 </div>
 
                 {/* 3. Feedback Quote */}
-                <p className="text-slate-300 text-sm leading-relaxed italic relative pt-1">
+                <p className="text-slate-700 text-xs sm:text-sm leading-relaxed italic relative pt-1">
                   "{rev.message}"
                 </p>
               </div>

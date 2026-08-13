@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowRight } from 'lucide-react';
-import Logo from './Logo';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,38 +27,62 @@ export default function Header() {
     { name: 'Technologies', path: '/technologies' },
     { name: 'About Us', path: '/about' },
     { name: 'Pricing', path: '/pricing' },
-    { name: 'Reviews', path: '/reviews' },
     { name: 'Contact', path: '/contact' },
   ];
-
 
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-[#080616]/95 backdrop-blur-xl border-b border-[#211845] shadow-xl py-3' 
-          : 'bg-[#080616]/80 backdrop-blur-md border-b border-[#181136]/60 py-4'
+        isHomePage
+          ? isScrolled 
+            ? 'bg-[#080616]/90 backdrop-blur-xl border-b border-[#211845]/60 shadow-xl py-3' 
+            : 'bg-transparent backdrop-blur-sm py-4'
+          : isScrolled
+            ? 'bg-[#FDFBF7]/95 backdrop-blur-xl border-b border-[#E2DCCE] shadow-md py-3'
+            : 'bg-[#FDFBF7]/80 backdrop-blur-md border-b border-[#E5DFD3]/60 py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Reusable Logo Component */}
-          <Logo />
+          {/* Brand Name Text (No Image Logo) */}
+          <Link
+            to="/"
+            className={`font-serif font-black text-lg sm:text-xl tracking-tight transition-colors ${
+              isHomePage ? 'text-white hover:text-purple-300' : 'text-[#0F172A] hover:text-purple-700'
+            }`}
+          >
+            NEXVIX SofTech Solutions
+          </Link>
 
-          {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-1 bg-[#120e29]/80 p-1.5 rounded-full border border-[#261d4e] backdrop-blur-md shadow-inner">
+          {/* Desktop Nav (Centered) */}
+          <nav 
+            className={`hidden lg:flex items-center gap-1 p-1.5 rounded-full backdrop-blur-md ${
+              isHomePage
+                ? 'bg-[#120e29]/80 border border-[#261d4e] shadow-inner'
+                : 'bg-white/90 border border-[#E2DCCE] shadow-sm'
+            }`}
+          >
             {navItems.map((item) => (
               <NavLink
                 key={item.name}
                 to={item.path}
-                className={({ isActive }) =>
-                  `px-4 py-2 text-xs font-semibold rounded-full transition-all duration-200 ${
-                    isActive && (item.path === location.pathname || (item.path === '/' && location.pathname === '/'))
-                      ? 'bg-[#6348f6] text-white font-bold shadow-md shadow-purple-900/60'
-                      : 'text-slate-300 hover:text-white hover:bg-[#1f1745]'
-                  }`
-                }
+                className={({ isActive }) => {
+                  const active = isActive && (item.path === location.pathname || (item.path === '/' && location.pathname === '/'));
+                  if (isHomePage) {
+                    return `px-4 py-2 text-xs font-bold rounded-full transition-all duration-200 ${
+                      active
+                        ? 'bg-[#6348f6] text-white shadow-md shadow-purple-900/60'
+                        : 'text-slate-300 hover:text-white hover:bg-[#1f1745]'
+                    }`;
+                  } else {
+                    return `px-4 py-2 text-xs font-bold rounded-full transition-all duration-200 ${
+                      active
+                        ? 'bg-[#0F172A] text-white shadow-md'
+                        : 'text-slate-700 hover:text-[#0F172A] hover:bg-slate-100'
+                    }`;
+                  }
+                }}
               >
                 {item.name}
               </NavLink>
@@ -68,7 +93,11 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-4">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#6348f6] hover:bg-[#5134e8] text-white font-bold text-xs rounded-full transition-all duration-300 shadow-lg shadow-purple-900/50 hover:scale-105"
+              className={`inline-flex items-center gap-2 px-6 py-2.5 font-bold text-xs rounded-full transition-all duration-300 shadow-md hover:scale-105 ${
+                isHomePage
+                  ? 'bg-[#6348f6] hover:bg-[#5134e8] text-white shadow-purple-900/50'
+                  : 'bg-[#0F172A] hover:bg-[#1E293B] text-white'
+              }`}
             >
               <span>Get a Free Quote</span>
               <ArrowRight className="w-4 h-4" />
@@ -76,13 +105,25 @@ export default function Header() {
           </div>
 
           {/* Mobile Menu Toggle Button */}
-          <div className="lg:hidden flex items-center">
+          <div className="lg:hidden flex items-center justify-between w-full">
+            <Link
+              to="/"
+              className={`font-serif font-black text-base tracking-tight ${
+                isHomePage ? 'text-white' : 'text-[#0F172A]'
+              }`}
+            >
+              NEXVIX SofTech Solutions
+            </Link>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 text-slate-300 hover:text-purple-400 focus:outline-none"
+              className={`p-2 focus:outline-none ${isHomePage ? 'text-slate-300 hover:text-purple-400' : 'text-slate-800 hover:text-purple-600'}`}
               aria-label="Toggle Navigation Menu"
             >
-              {isMobileMenuOpen ? <X className="w-7 h-7 text-purple-400" /> : <Menu className="w-7 h-7" />}
+              {isMobileMenuOpen ? (
+                <X className={`w-7 h-7 ${isHomePage ? 'text-purple-400' : 'text-[#0F172A]'}`} />
+              ) : (
+                <Menu className={`w-7 h-7 ${isHomePage ? 'text-slate-200' : 'text-[#0F172A]'}`} />
+              )}
             </button>
           </div>
 
@@ -91,18 +132,29 @@ export default function Header() {
 
       {/* Mobile Slide-down Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-[#090717]/95 backdrop-blur-2xl border-b border-[#261d4e] px-4 pt-4 pb-6 space-y-2 shadow-2xl">
+        <div 
+          className={`lg:hidden backdrop-blur-2xl px-4 pt-4 pb-6 space-y-2 shadow-2xl ${
+            isHomePage
+              ? 'bg-[#090717]/95 border-b border-[#261d4e]'
+              : 'bg-[#FDFBF7]/98 border-b border-[#E2DCCE]'
+          }`}
+        >
           {navItems.map((item) => (
             <NavLink
               key={item.name}
               to={item.path}
-              className={({ isActive }) =>
-                `block px-4 py-3 rounded-xl text-sm font-semibold transition-all ${
-                  isActive
-                    ? 'bg-[#6348f6] text-white'
-                    : 'text-slate-300 hover:bg-[#19133b]'
-                }`
-              }
+              className={({ isActive }) => {
+                const active = isActive && (item.path === location.pathname || (item.path === '/' && location.pathname === '/'));
+                if (isHomePage) {
+                  return `block px-4 py-3 rounded-xl text-sm font-semibold transition-all ${
+                    active ? 'bg-[#6348f6] text-white' : 'text-slate-300 hover:bg-[#19133b]'
+                  }`;
+                } else {
+                  return `block px-4 py-3 rounded-xl text-sm font-semibold transition-all ${
+                    active ? 'bg-[#0F172A] text-white' : 'text-slate-700 hover:bg-[#FAF6EC]'
+                  }`;
+                }
+              }}
             >
               {item.name}
             </NavLink>
@@ -110,7 +162,9 @@ export default function Header() {
           <div className="pt-2">
             <Link
               to="/contact"
-              className="w-full flex items-center justify-center gap-2 px-5 py-3 bg-[#6348f6] text-white font-bold text-sm rounded-xl shadow-lg"
+              className={`w-full flex items-center justify-center gap-2 px-5 py-3 font-bold text-sm rounded-xl shadow-lg ${
+                isHomePage ? 'bg-[#6348f6] text-white' : 'bg-[#0F172A] text-white'
+              }`}
             >
               <span>Get a Free Quote</span>
               <ArrowRight className="w-4 h-4" />

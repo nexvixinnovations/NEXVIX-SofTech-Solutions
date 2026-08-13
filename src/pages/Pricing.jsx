@@ -42,7 +42,7 @@ export default function Pricing() {
   ];
 
   return (
-    <div className="pt-28 pb-20 bg-[#080616] text-white min-h-screen">
+    <div className="pt-28 pb-20 bg-gradient-to-b from-[#FDFBF7] via-[#FAF6EC] to-[#F3EEE3] text-slate-800 min-h-screen">
 
       <SEO 
         title="Transparent Pricing Tiers & Multi-Currency Matrix | NEXVIX SofTech Solutions" 
@@ -53,26 +53,26 @@ export default function Pricing() {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 space-y-4">
-          <span className="inline-block text-purple-300 font-bold text-xs uppercase tracking-widest bg-[#1a123d] px-4 py-1.5 rounded-full border border-[#35266e]">
+          <span className="inline-block text-[#0F172A] font-bold text-xs uppercase tracking-widest bg-white px-4 py-1.5 rounded-full border border-[#E5DFD3] shadow-sm">
             No Hidden Fees • One-Time Payment • Global Multi-Currency
           </span>
-          <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white leading-tight">
+          <h1 className="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-[#0F172A] leading-tight bg-gradient-to-r from-slate-900 via-[#3b2a82] to-slate-900 bg-clip-text text-transparent">
             Transparent Pricing Built for ROI
           </h1>
-          <p className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
-            Select your project tier and currency below. Default currency is set to <strong className="text-purple-300">USD ($)</strong> with options to switch to <strong className="text-purple-300">GBP (£), AUD (A$), and CAD (C$)</strong>.
+          <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+            Select your project tier and currency below. Default currency is set to <strong className="text-[#0F172A]">USD ($)</strong> with options to switch to <strong className="text-[#0F172A]">GBP (£), AUD (A$), and CAD (C$)</strong>.
           </p>
         </div>
 
         {/* Currency Switcher & View Selector Controls */}
-        <div className="bg-[#120d29] border border-[#271d52] rounded-3xl p-6 mb-12 shadow-xl max-w-5xl mx-auto">
+        <div className="bg-[#FFFCF9] border border-[#E8E2D5] rounded-3xl p-6 mb-12 shadow-sm max-w-5xl mx-auto">
           
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
             
             {/* Currency Pills */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-3 w-full lg:w-auto">
-              <span className="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5 shrink-0 mr-1">
-                <Globe className="w-4 h-4 text-purple-400" />
+              <span className="text-xs font-bold text-slate-500 uppercase tracking-wider flex items-center gap-1.5 shrink-0 mr-1">
+                <Globe className="w-4 h-4 text-purple-600" />
                 Currency:
               </span>
 
@@ -85,8 +85,8 @@ export default function Pricing() {
                       onClick={() => setSelectedCurrency(curr.code)}
                       className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all duration-300 flex items-center gap-1.5 cursor-pointer whitespace-nowrap ${
                         isSelected
-                          ? 'bg-[#6348f6] text-white shadow-lg shadow-purple-900/60 scale-105 border border-purple-400'
-                          : 'bg-[#1a1240] text-slate-300 hover:text-white hover:bg-[#251b5c] border border-[#34236e]'
+                          ? 'bg-[#0F172A] text-white shadow-md scale-105 border border-[#0F172A]'
+                          : 'bg-[#FAF6EC] text-slate-700 hover:text-[#0F172A] hover:bg-slate-200 border border-[#E5DFD3]'
                       }`}
                     >
                       <span>{curr.flag}</span>
@@ -98,13 +98,13 @@ export default function Pricing() {
             </div>
 
             {/* View Mode Switcher (Card vs Full Matrix Table) */}
-            <div className="flex items-center gap-2 bg-[#090717] p-1.5 rounded-full border border-[#241c4a] shrink-0">
+            <div className="flex items-center gap-2 bg-[#F5F0E6] p-1.5 rounded-full border border-[#E2DCCE] shrink-0">
               <button
                 onClick={() => setViewMode('cards')}
                 className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 ${
                   viewMode === 'cards'
-                    ? 'bg-[#6348f6] text-white'
-                    : 'text-slate-400 hover:text-white'
+                    ? 'bg-[#0F172A] text-white shadow-xs'
+                    : 'text-slate-600 hover:text-[#0F172A]'
                 }`}
               >
                 <LayoutGrid className="w-3.5 h-3.5" />
@@ -115,8 +115,8 @@ export default function Pricing() {
                 onClick={() => setViewMode('table')}
                 className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 ${
                   viewMode === 'table'
-                    ? 'bg-[#6348f6] text-white'
-                    : 'text-slate-400 hover:text-white'
+                    ? 'bg-[#0F172A] text-white shadow-xs'
+                    : 'text-slate-600 hover:text-[#0F172A]'
                 }`}
               >
                 <Table className="w-3.5 h-3.5" />
@@ -127,16 +127,16 @@ export default function Pricing() {
           </div>
 
           {/* Category Filters */}
-          <div className="mt-6 pt-5 border-t border-[#1f1745] flex items-center justify-center gap-2 flex-wrap">
-            <span className="text-xs text-slate-400 font-semibold mr-2">Category:</span>
-            {['All', 'Business Website (5 Pages)', 'E-Commerce Store', 'Web App'].map((cat) => (
+          <div className="mt-6 pt-5 border-t border-[#E8E2D5] flex items-center justify-center gap-2 flex-wrap">
+            <span className="text-xs text-slate-500 font-semibold mr-2">Category:</span>
+            {['All', 'Business Website (5 Pages)', 'E-Commerce Store', 'Custom SaaS Development', 'Web App'].map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                   selectedCategory === cat
-                    ? 'bg-purple-900/60 text-purple-200 border border-purple-500 font-bold'
-                    : 'bg-[#181138] text-slate-400 hover:text-slate-200 border border-[#2b1f5c]'
+                    ? 'bg-[#0F172A] text-white font-bold shadow-xs'
+                    : 'bg-[#FAF6EC] text-slate-600 hover:text-[#0F172A] border border-[#E5DFD3]'
                 }`}
               >
                 {cat === 'All' ? 'All Tiers' : cat}
@@ -155,11 +155,11 @@ export default function Pricing() {
                 <div key={groupIdx} className="space-y-6">
                   
                   {/* Section Title */}
-                  <div className="border-b border-[#241c4a] pb-4 flex items-center justify-between">
-                    <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-white">
+                  <div className="border-b border-[#E5DFD3] pb-4 flex items-center justify-between">
+                    <h2 className="font-serif font-bold text-2xl sm:text-3xl text-[#0F172A]">
                       {catGroup.category}
                     </h2>
-                    <span className="text-xs font-bold text-purple-400 bg-[#160f38] px-3.5 py-1 rounded-full border border-[#2d1e6e]">
+                    <span className="text-xs font-bold text-[#7E520A] bg-[#FAF0D9] px-3.5 py-1 rounded-full border border-[#F3DBA7]">
                       Prices in {selectedCurrency} ({activeCurrencyObj.symbol})
                     </span>
                   </div>
@@ -174,34 +174,34 @@ export default function Pricing() {
                       return (
                         <div 
                           key={tierIdx} 
-                          className={`bg-[#120d29] rounded-3xl p-6 lg:p-8 flex flex-col justify-between shadow-xl transition-all duration-300 relative ${
+                          className={`bg-[#FFFCF9] rounded-3xl p-6 lg:p-8 flex flex-col justify-between shadow-[0_4px_20px_rgba(0,0,0,0.04)] transition-all duration-300 relative border ${
                             tier.popular 
-                              ? 'border-2 border-[#6348f6] shadow-purple-900/40' 
-                              : 'border border-[#271d52] hover:border-purple-500/50'
+                              ? 'border-2 border-[#0F172A] shadow-md' 
+                              : 'border-[#E8E2D5] hover:border-purple-400'
                           }`}
                         >
                           {tier.popular && (
-                            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#6348f6] text-white text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full shadow-md flex items-center gap-1.5 whitespace-nowrap">
-                              <Star className="w-3.5 h-3.5 fill-white" />
+                            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#0F172A] text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-md flex items-center gap-1.5 whitespace-nowrap">
+                              <Star className="w-3.5 h-3.5 fill-amber-300 text-amber-300" />
                               <span>Most Popular Choice</span>
                             </div>
                           )}
 
                           <div>
                             <div className="flex items-center justify-between mb-4 pt-2">
-                              <span className="text-xs font-bold uppercase tracking-wider text-purple-300">
+                              <span className="text-xs font-bold uppercase tracking-wider text-slate-500">
                                 {tier.tierName}
                               </span>
-                              <span className="px-3 py-1 bg-[#1a1240] text-purple-300 font-bold text-[10px] sm:text-xs rounded-full border border-[#341d6e]">
+                              <span className="px-3 py-1 bg-[#FAF0D9] text-[#7E520A] font-bold text-[10px] sm:text-xs rounded-full border border-[#F3DBA7]">
                                 {tier.delivery}
                               </span>
                             </div>
 
-                            <h3 className="font-heading font-extrabold text-2xl text-white mb-2">
+                            <h3 className="font-serif font-extrabold text-2xl text-[#0F172A] mb-2">
                               {tier.tierName}
                             </h3>
                             
-                            <p className="text-xs text-slate-400 mb-6 min-h-[40px]">
+                            <p className="text-xs text-slate-600 mb-6 min-h-[40px] leading-relaxed">
                               {tier.description}
                             </p>
 
@@ -212,10 +212,10 @@ export default function Pricing() {
                               save={priceObj.save}
                             />
 
-                            <div className="my-6 border-t border-[#1f1745] pt-6 space-y-3.5 text-sm text-slate-300">
+                            <div className="my-6 border-t border-[#F0EAE0] pt-6 space-y-3.5 text-xs sm:text-sm text-slate-700">
                               {tier.features.slice(0, 4).map((feat, fIdx) => (
                                 <div key={fIdx} className="flex items-center gap-3">
-                                  <Check className="w-4 h-4 text-purple-400 shrink-0" />
+                                  <Check className="w-4 h-4 text-emerald-600 shrink-0" />
                                   <span>{feat}</span>
                                 </div>
                               ))}
@@ -224,21 +224,21 @@ export default function Pricing() {
                               <div className={`space-y-3.5 overflow-hidden transition-all duration-500 ${isExpanded ? 'max-h-[600px] opacity-100 mt-3.5' : 'max-h-0 opacity-0'}`}>
                                 {tier.features.slice(4).map((feat, fIdx) => (
                                   <div key={fIdx} className="flex items-center gap-3">
-                                    <Check className="w-4 h-4 text-purple-400 shrink-0" />
+                                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
                                     <span>{feat}</span>
                                   </div>
                                 ))}
 
-                                <div className="space-y-2 pt-4 text-center border-t border-[#1f1745]">
-                                  <span className="block text-xs font-bold text-emerald-400">100% Code & Asset Ownership</span>
-                                  <span className="block text-xs font-bold text-amber-300">🎁 Personal Domain Included FREE</span>
+                                <div className="space-y-2 pt-4 text-center border-t border-[#F0EAE0]">
+                                  <span className="block text-xs font-bold text-emerald-700">100% Code & Asset Ownership</span>
+                                  <span className="block text-xs font-bold text-[#7E520A]">🎁 Personal Domain Included FREE</span>
                                 </div>
                               </div>
                             </div>
 
                             <button 
                               onClick={() => toggleExpand(cardKey)} 
-                              className="text-purple-400 text-xs font-bold mt-2 flex items-center justify-center gap-1 w-full hover:text-purple-300 transition-colors pb-4 border-b border-[#1f1745] focus:outline-none"
+                              className="text-slate-600 text-xs font-bold mt-2 flex items-center justify-center gap-1 w-full hover:text-[#0F172A] transition-colors pb-4 border-b border-[#F0EAE0] focus:outline-none"
                             >
                               {isExpanded ? 'Show Less' : 'Show Full Details'}
                               <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
@@ -247,10 +247,10 @@ export default function Pricing() {
 
                           <Link
                             to="/contact"
-                            className={`w-full mt-6 py-3.5 px-6 rounded-2xl font-extrabold text-sm text-center transition-all duration-300 ${
+                            className={`w-full mt-6 py-3.5 px-6 rounded-2xl font-bold text-xs sm:text-sm text-center transition-all duration-300 ${
                               tier.popular
-                                ? 'bg-[#6348f6] hover:bg-[#5134e8] text-white shadow-lg shadow-purple-900/50 hover:scale-105'
-                                : 'bg-[#1a1240] hover:bg-[#241858] text-white border border-[#341d6e]'
+                                ? 'bg-[#0F172A] hover:bg-[#1E293B] text-white shadow-md hover:scale-105'
+                                : 'bg-white hover:bg-slate-100 text-slate-800 border border-[#E5DFD3] shadow-xs'
                             }`}
                           >
                             Select {tier.tierName}
@@ -267,21 +267,21 @@ export default function Pricing() {
 
         {/* View Mode 2: Official Pricing Matrix Table */}
         {viewMode === 'table' && (
-          <div className="bg-[#120d29] border border-[#271d52] rounded-3xl p-6 sm:p-8 mb-20 shadow-2xl overflow-x-auto">
+          <div className="bg-[#FFFCF9] border border-[#E8E2D5] rounded-3xl p-6 sm:p-8 mb-20 shadow-sm overflow-x-auto">
             
             <div className="mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
-                <h2 className="font-heading font-extrabold text-2xl text-white">
+                <h2 className="font-serif font-bold text-2xl text-[#0F172A]">
                   Official Pricing Matrix
                 </h2>
-                <p className="text-xs text-slate-400 mt-1">
+                <p className="text-xs text-slate-500 mt-1">
                   Complete breakdown of Project Category, Project Tier, Currency, Original Price, Offer Price, and Savings.
                 </p>
               </div>
               
               <div className="flex items-center gap-2">
-                <span className="text-xs text-slate-400 font-bold">Showing Currency:</span>
-                <span className="px-3 py-1 bg-[#6348f6] text-white font-bold text-xs rounded-full">
+                <span className="text-xs text-slate-500 font-bold">Showing Currency:</span>
+                <span className="px-3 py-1 bg-[#0F172A] text-white font-bold text-xs rounded-full">
                   {selectedCurrency} ({activeCurrencyObj.symbol})
                 </span>
               </div>
@@ -289,41 +289,41 @@ export default function Pricing() {
 
             <table className="w-full text-left border-collapse min-w-[700px]">
               <thead>
-                <tr className="border-b border-[#2b2059] text-xs font-bold uppercase tracking-wider text-purple-300 bg-[#090717]">
+                <tr className="border-b border-[#E8E2D5] text-xs font-bold uppercase tracking-wider text-[#0F172A] bg-[#FAF6EC]">
                   <th className="py-4 px-4">Project Category</th>
                   <th className="py-4 px-4">Project Tier</th>
                   <th className="py-4 px-4 text-center">Currency</th>
                   <th className="py-4 px-4 text-right">Original Price</th>
-                  <th className="py-4 px-4 text-right text-purple-300">Offer Price</th>
-                  <th className="py-4 px-4 text-right text-emerald-400">You Save</th>
+                  <th className="py-4 px-4 text-right text-[#0F172A]">Offer Price</th>
+                  <th className="py-4 px-4 text-right text-emerald-700">You Save</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-[#1f1745] text-sm">
+              <tbody className="divide-y divide-[#F0EAE0] text-sm">
                 {pricingCategories
                   .filter(catGroup => selectedCategory === 'All' || selectedCategory === catGroup.category)
                   .flatMap((catGroup) => 
                     catGroup.tiers.map((tier, tierIdx) => {
                       const priceObj = tier.prices[selectedCurrency];
                       return (
-                        <tr key={`${catGroup.category}-${tier.tierName}`} className="hover:bg-[#1a133b] transition-colors">
-                          <td className="py-4 px-4 font-bold text-white">
+                        <tr key={`${catGroup.category}-${tier.tierName}`} className="hover:bg-[#FAF6EC] transition-colors">
+                          <td className="py-4 px-4 font-bold text-[#0F172A]">
                             {tierIdx === 0 ? catGroup.category : ''}
                           </td>
-                          <td className="py-4 px-4 font-medium text-slate-200">
+                          <td className="py-4 px-4 font-medium text-slate-700">
                             {tier.tierName}
                           </td>
                           <td className="py-4 px-4 text-center">
-                            <span className="px-2.5 py-1 bg-[#1a1240] text-purple-300 font-mono text-xs rounded-full border border-[#34236e]">
+                            <span className="px-2.5 py-1 bg-[#FAF0D9] text-[#7E520A] font-mono text-xs rounded-full border border-[#F3DBA7]">
                               {selectedCurrency}
                             </span>
                           </td>
                           <td className="py-4 px-4 text-right text-slate-400 line-through font-mono">
                             {priceObj.original}
                           </td>
-                          <td className="py-4 px-4 text-right font-extrabold text-purple-400 font-mono text-base">
+                          <td className="py-4 px-4 text-right font-extrabold text-[#0F172A] font-mono text-base">
                             {priceObj.offer}
                           </td>
-                          <td className="py-4 px-4 text-right font-bold text-emerald-400 font-mono">
+                          <td className="py-4 px-4 text-right font-bold text-emerald-700 font-mono">
                             {priceObj.save}
                           </td>
                         </tr>
@@ -337,12 +337,12 @@ export default function Pricing() {
         )}
 
         {/* FAQ Accordion Section */}
-        <div className="max-w-4xl mx-auto pt-10 border-t border-[#1f1745]">
+        <div className="max-w-4xl mx-auto pt-10 border-t border-[#E5DFD3]">
           <div className="text-center mb-10">
-            <h2 className="font-heading font-extrabold text-3xl text-white">
+            <h2 className="font-serif font-bold text-3xl text-[#0F172A]">
               Frequently Asked Questions
             </h2>
-            <p className="text-slate-400 text-sm mt-2">
+            <p className="text-slate-600 text-sm mt-2">
               Everything you need to know about working with NEXVIX SofTech Solutions.
             </p>
           </div>
@@ -351,20 +351,20 @@ export default function Pricing() {
             {faqs.map((faq, idx) => (
               <div 
                 key={idx}
-                className="bg-[#120d29] rounded-2xl border border-[#271d52] overflow-hidden shadow-sm"
+                className="bg-[#FFFCF9] rounded-2xl border border-[#E8E2D5] overflow-hidden shadow-xs"
               >
                 <button
                   onClick={() => setOpenFaqIndex(openFaqIndex === idx ? null : idx)}
                   className="w-full p-5 text-left flex items-center justify-between gap-4 focus:outline-none"
                 >
-                  <span className="font-heading font-extrabold text-base text-white">
+                  <span className="font-serif font-bold text-base text-[#0F172A]">
                     {faq.q}
                   </span>
-                  <ChevronDown className={`w-5 h-5 text-purple-400 transition-transform duration-300 shrink-0 ${openFaqIndex === idx ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`w-5 h-5 text-slate-500 transition-transform duration-300 shrink-0 ${openFaqIndex === idx ? 'rotate-180' : ''}`} />
                 </button>
 
                 {openFaqIndex === idx && (
-                  <div className="px-5 pb-5 pt-0 text-sm text-slate-400 leading-relaxed border-t border-[#1f1745] mt-2">
+                  <div className="px-5 pb-5 pt-0 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-[#F0EAE0] mt-2">
                     {faq.a}
                   </div>
                 )}
