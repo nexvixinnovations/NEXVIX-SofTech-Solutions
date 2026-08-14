@@ -19,11 +19,14 @@ export default function Logo({ className = "h-9 w-auto", showText = true }) {
         />
       </div>
       {showText && (
-        <div className="flex flex-col">
-          <span className="font-heading font-extrabold text-lg tracking-wider text-white group-hover:text-purple-400 transition-colors leading-tight">
+        <div className="flex flex-col items-start">
+          <span className="font-heading font-black italic text-lg tracking-widest uppercase text-nexvix-blue-glow leading-tight">
             NEXVIX
           </span>
-          <span className="text-[10px] font-medium text-slate-400 tracking-tight leading-none">
+          <div className="w-full h-[2px] bg-[#1a1c38] rounded-full overflow-hidden relative my-0.5">
+            <div className="h-full w-2/3 bg-gradient-to-r from-[#3b82f6] via-[#60a5fa] to-[#6348f6] rounded-full animate-nexvix-loading-line shadow-[0_0_6px_#3b82f6]" />
+          </div>
+          <span className="text-[10px] font-bold text-slate-300 tracking-tight leading-none">
             SofTech Solutions
           </span>
         </div>

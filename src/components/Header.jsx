@@ -45,14 +45,26 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Brand Name Text */}
+          {/* Brand Name Text with Electric Blue NEXVIX Loading Style */}
           <Link
             to="/"
-            className={`whitespace-nowrap font-serif font-black text-base sm:text-lg lg:text-xl tracking-tight transition-colors ${
-              isHomePage ? 'text-white hover:text-purple-300' : 'text-[#0F172A] hover:text-purple-700'
-            }`}
+            className="whitespace-nowrap inline-flex items-center gap-2 group focus:outline-none transition-transform hover:scale-[1.02]"
           >
-            NEXVIX SofTech Solutions
+            <div className="inline-flex flex-col items-center">
+              <span className="font-heading font-black italic text-lg sm:text-xl lg:text-2xl tracking-widest uppercase text-nexvix-blue-glow">
+                NEXVIX
+              </span>
+              {/* Electric Blue Animated Loading Bar Line */}
+              <div className="w-full h-[3px] bg-[#1a1c38] rounded-full overflow-hidden relative mt-0.5">
+                <div className="h-full w-2/3 bg-gradient-to-r from-[#3b82f6] via-[#60a5fa] to-[#6348f6] rounded-full animate-nexvix-loading-line shadow-[0_0_8px_#3b82f6]" />
+              </div>
+            </div>
+
+            <span className={`font-sans font-bold text-sm sm:text-base lg:text-lg tracking-tight ${
+              isHomePage ? 'text-slate-100' : 'text-[#0F172A]'
+            }`}>
+              SofTech Solutions
+            </span>
           </Link>
 
           {/* Desktop Nav (Centered) */}

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import Preloader from './components/Preloader';
 
 import Home from './pages/Home';
 import Showcase from './pages/Showcase';
@@ -16,6 +17,7 @@ export default function App() {
   return (
     <Router>
       <ScrollToTop />
+      <Preloader />
       <div className="flex flex-col min-h-screen bg-[#080616] text-white selection:bg-[#6348f6] selection:text-white">
         <Header />
         <main className="flex-grow">

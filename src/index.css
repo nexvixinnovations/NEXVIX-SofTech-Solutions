@@ -100,6 +100,30 @@
   -webkit-text-fill-color: transparent;
 }
 
+/* Electric Blue Animated Loading Bar Effect for NEXVIX Brand */
+@keyframes nexvixBlueLoadingLine {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(40%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+.animate-nexvix-loading-line {
+  animation: nexvixBlueLoadingLine 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.text-nexvix-blue-glow {
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #6348f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.75));
+}
+
 /* Curved Neon Wave Graphic Background */
 .neon-wave-bg {
   background-image: radial-gradient(circle at 80% 30%, rgba(99, 72, 246, 0.25) 0%, transparent 60%);
