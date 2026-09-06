@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import PriceTag from '../components/PriceTag';
 import { currencies, pricingCategories } from '../data/pricingData';
-import { Check, Zap, ChevronDown, ShieldCheck, ArrowRight, Star, Globe, Table, LayoutGrid, CheckCircle2 } from 'lucide-react';
+import { Check, Zap, ChevronDown, ShieldCheck, ArrowRight, Star, Globe, Table, LayoutGrid, CheckCircle2, MessageSquare, Mail } from 'lucide-react';
 
 export default function Pricing() {
   const [selectedCurrency, setSelectedCurrency] = useState('USD');
@@ -266,25 +266,29 @@ export default function Pricing() {
 
                   {/* Optional Category Footnote (e.g. for custom length video inquiries) */}
                   {catGroup.footnote && (
-                    <div className="mt-8 p-4 sm:p-5 rounded-2xl bg-[#FAF6EC] border border-[#E8E2D5] text-center max-w-3xl mx-auto text-xs sm:text-sm text-slate-600 shadow-xs">
-                      <p>
-                        {catGroup.footnote}{' '}
+                    <div className="mt-8 p-6 sm:p-7 rounded-3xl bg-[#FAF6EC] border border-[#E8E2D5] text-center max-w-4xl mx-auto shadow-xs">
+                      <p className="text-xs sm:text-sm text-slate-700 leading-relaxed max-w-2xl mx-auto mb-5 font-medium">
+                        {catGroup.footnote}
+                      </p>
+                      <div className="flex flex-wrap items-center justify-center gap-3">
                         <a 
-                          href="https://wa.me/918778611693" 
+                          href="https://wa.me/918778611693?text=Hi%20NEXVIX%2C%20I%20would%20like%20a%20custom%20quote%20for%20an%20AI%20video%20production%20project." 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="text-[#6348f6] hover:text-[#5134e8] font-bold underline inline-flex items-center gap-1"
+                          className="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm rounded-full shadow-sm hover:shadow transition-all hover:scale-105"
                         >
-                          WhatsApp (+91 8778611693)
+                          <MessageSquare className="w-4 h-4" />
+                          <span>WhatsApp (+91 8778611693)</span>
                         </a>
-                        {' or '}
+
                         <a 
-                          href="mailto:nexvix.innovations@gmail.com"
-                          className="text-[#6348f6] hover:text-[#5134e8] font-bold underline inline-flex items-center gap-1"
+                          href="mailto:nexvix.innovations@gmail.com?subject=Custom%20AI%20Video%20Production%20Inquiry"
+                          className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#0F172A] hover:bg-slate-800 text-white font-bold text-xs sm:text-sm rounded-full shadow-sm hover:shadow transition-all hover:scale-105"
                         >
-                          nexvix.innovations@gmail.com
-                        </a>.
-                      </p>
+                          <Mail className="w-4 h-4 text-purple-400" />
+                          <span>Gmail: nexvix.innovations@gmail.com</span>
+                        </a>
+                      </div>
                     </div>
                   )}
 

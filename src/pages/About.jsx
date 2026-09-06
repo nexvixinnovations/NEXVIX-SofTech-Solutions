@@ -59,7 +59,7 @@ export default function About() {
         </div>
 
         {/* Stats Bar */}
-        <StatsBar className="my-12 rounded-3xl border border-[#E8E2D5] shadow-sm bg-[#FFFCF9]" />
+        <StatsBar className="my-14" />
 
         {/* Our Story & Mission Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
