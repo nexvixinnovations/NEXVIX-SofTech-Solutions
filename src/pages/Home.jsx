@@ -345,9 +345,9 @@ export default function Home() {
                           <p className="text-xs text-slate-400 mt-1">{tier.delivery}</p>
                         </div>
                         <div className="text-left sm:text-right shrink-0">
-                          <p className="text-[11px] text-slate-500 line-through">{price.original}</p>
+                          {price.original && <p className="text-[11px] text-slate-500 line-through">{price.original}</p>}
                           <p className="font-heading font-extrabold text-lg text-white">{price.offer}</p>
-                          <p className="text-[11px] font-bold text-emerald-300">Save {price.save}</p>
+                          {price.save && <p className="text-[11px] font-bold text-emerald-300">Save {price.save}</p>}
                         </div>
                       </div>
                     );

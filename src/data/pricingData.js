@@ -227,5 +227,70 @@ export const pricingCategories = [
         }
       }
     ]
+  },
+  {
+    category: 'AI Video Production',
+    shortName: 'AI Video',
+    footnote: "Need a longer or custom-length short-form video? Pricing is scoped individually — reach out and we'll quote it for you.",
+    tiers: [
+      {
+        tierName: 'Quick Cut — 15 Seconds',
+        delivery: '48–72 Hours Delivery',
+        description: 'Built for a single hook or announcement — a product reveal, a promo line, a quick social ad. Best for platforms where attention spans are shortest (Reels, Shorts, TikTok, Stories).',
+        features: [
+          '15-Second AI-Generated Video',
+          'Single Core Message / Hook',
+          'Optimized for Social Feeds (9:16)',
+          '1 Round of Revisions',
+          'Delivery in 48–72 Hours'
+        ],
+        prices: {
+          USD: { offer: '$500', offerNum: 500 },
+          GBP: { offer: '£385', offerNum: 385 },
+          AUD: { offer: 'A$750', offerNum: 750 },
+          CAD: { offer: 'C$680', offerNum: 680 }
+        }
+      },
+      {
+        tierName: 'Story Reel — 30 Seconds',
+        delivery: '3–4 Days Delivery',
+        popular: true,
+        description: 'Enough room to introduce a problem, show the product or service in action, and close with a clear call to action. This is the length that performs best across most paid social and landing-page use cases.',
+        features: [
+          '30-Second AI-Generated Video',
+          'Problem → Solution → CTA Structure',
+          'Multi-Platform Aspect Ratios (9:16 / 1:1 / 16:9)',
+          'Voiceover or Captions Included',
+          '2 Rounds of Revisions',
+          'Delivery in 3–4 Days'
+        ],
+        prices: {
+          USD: { offer: '$750', offerNum: 750 },
+          GBP: { offer: '£575', offerNum: 575 },
+          AUD: { offer: 'A$1,125', offerNum: 1125 },
+          CAD: { offer: 'C$1,020', offerNum: 1020 }
+        }
+      },
+      {
+        tierName: 'Full Story — 60 Seconds',
+        delivery: '5–7 Days Delivery',
+        description: 'Room for a complete explainer or brand story with multiple scenes/beats — useful for landing-page hero videos, investor/pitch clips, or a fuller product walkthrough that needs more than one idea to land.',
+        features: [
+          '60-Second AI-Generated Video',
+          'Multi-Scene Storytelling',
+          'Custom Voiceover & Sound Design',
+          'All Platform Aspect Ratios',
+          '3 Rounds of Revisions',
+          'Delivery in 5–7 Days'
+        ],
+        prices: {
+          USD: { offer: '$1,000', offerNum: 1000 },
+          GBP: { offer: '£770', offerNum: 770 },
+          AUD: { offer: 'A$1,500', offerNum: 1500 },
+          CAD: { offer: 'C$1,360', offerNum: 1360 }
+        }
+      }
+    ]
   }
 ];
+

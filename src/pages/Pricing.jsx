@@ -129,7 +129,7 @@ export default function Pricing() {
           {/* Category Filters */}
           <div className="mt-6 pt-5 border-t border-[#E8E2D5] flex items-center justify-center gap-2 flex-wrap">
             <span className="text-xs text-slate-500 font-semibold mr-2">Category:</span>
-            {['All', 'Business Website (5 Pages)', 'E-Commerce Store', 'Custom SaaS Development', 'Web App'].map((cat) => (
+            {['All', ...pricingCategories.map(c => c.category)].map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
@@ -221,28 +221,32 @@ export default function Pricing() {
                               ))}
 
                               {/* Expandable Extra Features */}
-                              <div className={`space-y-3.5 overflow-hidden transition-all duration-500 ${isExpanded ? 'max-h-[600px] opacity-100 mt-3.5' : 'max-h-0 opacity-0'}`}>
-                                {tier.features.slice(4).map((feat, fIdx) => (
-                                  <div key={fIdx} className="flex items-center gap-3">
-                                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                                    <span>{feat}</span>
-                                  </div>
-                                ))}
+                              {tier.features.length > 4 && (
+                                <div className={`space-y-3.5 overflow-hidden transition-all duration-500 ${isExpanded ? 'max-h-[600px] opacity-100 mt-3.5' : 'max-h-0 opacity-0'}`}>
+                                  {tier.features.slice(4).map((feat, fIdx) => (
+                                    <div key={fIdx} className="flex items-center gap-3">
+                                      <Check className="w-4 h-4 text-emerald-600 shrink-0" />
+                                      <span>{feat}</span>
+                                    </div>
+                                  ))}
 
-                                <div className="space-y-2 pt-4 text-center border-t border-[#F0EAE0]">
-                                  <span className="block text-xs font-bold text-emerald-700">100% Code & Asset Ownership</span>
-                                  <span className="block text-xs font-bold text-[#7E520A]">🎁 Personal Domain Included FREE</span>
+                                  <div className="space-y-2 pt-4 text-center border-t border-[#F0EAE0]">
+                                    <span className="block text-xs font-bold text-emerald-700">100% Code & Asset Ownership</span>
+                                    <span className="block text-xs font-bold text-[#7E520A]">🎁 Personal Domain Included FREE</span>
+                                  </div>
                                 </div>
-                              </div>
+                              )}
                             </div>
 
-                            <button 
-                              onClick={() => toggleExpand(cardKey)} 
-                              className="text-slate-600 text-xs font-bold mt-2 flex items-center justify-center gap-1 w-full hover:text-[#0F172A] transition-colors pb-4 border-b border-[#F0EAE0] focus:outline-none"
-                            >
-                              {isExpanded ? 'Show Less' : 'Show Full Details'}
-                              <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
-                            </button>
+                            {tier.features.length > 4 && (
+                              <button 
+                                onClick={() => toggleExpand(cardKey)} 
+                                className="text-slate-600 text-xs font-bold mt-2 flex items-center justify-center gap-1 w-full hover:text-[#0F172A] transition-colors pb-4 border-b border-[#F0EAE0] focus:outline-none"
+                              >
+                                {isExpanded ? 'Show Less' : 'Show Full Details'}
+                                <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
+                              </button>
+                            )}
                           </div>
 
                           <Link
@@ -259,6 +263,30 @@ export default function Pricing() {
                       );
                     })}
                   </div>
+
+                  {/* Optional Category Footnote (e.g. for custom length video inquiries) */}
+                  {catGroup.footnote && (
+                    <div className="mt-8 p-4 sm:p-5 rounded-2xl bg-[#FAF6EC] border border-[#E8E2D5] text-center max-w-3xl mx-auto text-xs sm:text-sm text-slate-600 shadow-xs">
+                      <p>
+                        {catGroup.footnote}{' '}
+                        <a 
+                          href="https://wa.me/918778611693" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-[#6348f6] hover:text-[#5134e8] font-bold underline inline-flex items-center gap-1"
+                        >
+                          WhatsApp (+91 8778611693)
+                        </a>
+                        {' or '}
+                        <a 
+                          href="mailto:nexvix.innovations@gmail.com"
+                          className="text-[#6348f6] hover:text-[#5134e8] font-bold underline inline-flex items-center gap-1"
+                        >
+                          nexvix.innovations@gmail.com
+                        </a>.
+                      </p>
+                    </div>
+                  )}
 
                 </div>
               ))}
@@ -318,13 +346,13 @@ export default function Pricing() {
                             </span>
                           </td>
                           <td className="py-4 px-4 text-right text-slate-400 line-through font-mono">
-                            {priceObj.original}
+                            {priceObj.original || '—'}
                           </td>
                           <td className="py-4 px-4 text-right font-extrabold text-[#0F172A] font-mono text-base">
                             {priceObj.offer}
                           </td>
                           <td className="py-4 px-4 text-right font-bold text-emerald-700 font-mono">
-                            {priceObj.save}
+                            {priceObj.save || 'Flat Price'}
                           </td>
                         </tr>
                       );
