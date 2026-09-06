@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import ProjectCard from '../components/ProjectCard';
 import { projectsData, filterCategories } from '../data/projectsData';
-import { Sparkles, X, ExternalLink, ShieldCheck, CheckCircle2, ArrowRight, Layers, Award, Clock, Globe } from 'lucide-react';
+import { Sparkles, X, ExternalLink, ShieldCheck, CheckCircle2, ArrowRight, Layers, Award, Clock, Globe, Star } from 'lucide-react';
 
 export default function Showcase() {
   const [activeTab, setActiveTab] = useState('All Projects');
@@ -153,112 +154,27 @@ export default function Showcase() {
 
         </div>
 
-        {/* Continuous Slow Sliding Client Reviews Column Section */}
-        <div className="mt-24 pt-16 border-t border-[#E5DFD3] overflow-hidden">
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <span className="text-[#0F172A] font-semibold text-xs uppercase tracking-widest bg-white px-3.5 py-1.5 rounded-full border border-[#E2DCCE] shadow-sm">
-              CLIENT TESTIMONIALS
-            </span>
-            <h2 className="font-serif font-bold text-3xl sm:text-4xl text-[#0F172A] mt-3">
-              What Our Platform Clients Say
+        {/* Verified Client Feedback & Google Reviews Callout */}
+        <div className="mt-20 pt-14 border-t border-[#E5DFD3]">
+          <div className="bg-[#FFFCF9] border border-[#E8E2D5] rounded-3xl p-8 sm:p-12 text-center max-w-4xl mx-auto shadow-sm">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FAF6EC] border border-[#E5DFD3] text-[#0F172A] font-bold text-xs uppercase tracking-widest mb-4">
+              <Star className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
+              <span>Google Verified Client Feedback</span>
+            </div>
+            <h2 className="font-serif font-bold text-2xl sm:text-3xl text-[#0F172A] mb-3">
+              Read Live Client Reviews on Google
             </h2>
-            <p className="text-slate-600 text-sm mt-2">
-              Continuous feedback from verified business founders and project leads worldwide.
+            <p className="text-slate-600 text-sm max-w-xl mx-auto mb-6 leading-relaxed">
+              Explore authentic, live ratings and feedback from business founders, medical professionals, and leaders who launched their custom web platforms with NEXVIX SofTech Solutions.
             </p>
-          </div>
-
-          {/* Marquee Ticker Container */}
-          <div className="relative w-full overflow-hidden py-4">
-            <div className="animate-marquee-slow flex gap-6">
-              {[
-                {
-                  name: 'Rohan Sundaram',
-                  project: 'Madurai Food Corner',
-                  role: 'Restaurant Owner',
-                  comment: 'The interactive South Indian menu and instant WhatsApp ordering platform increased catering inquiries by 180%. The video walkthrough and speed give us a massive edge!'
-                },
-                {
-                  name: 'Ananya Sharma',
-                  project: 'Digital Art Studio',
-                  role: 'E-Commerce Founder',
-                  comment: 'NEXVIX built our watercolor portrait e-commerce store with live INR pricing & before/after artwork sliders. Online portrait sales doubled in 30 days.'
-                },
-                {
-                  name: 'Marcus Vance',
-                  project: 'SunPeak Solar Co.',
-                  role: 'Solar Director',
-                  comment: 'Inbound quote inquiries surged by over 140% in our first month after launching the SunPeak platform. Sub-second load times!'
-                },
-                {
-                  name: 'Dr. Sarah Jenkins',
-                  project: 'Serene Health',
-                  role: 'Medical Director',
-                  comment: 'Patient online appointment bookings doubled since launching our calm, trust-focused healthcare portal. Exceptional design and SLA turnaround!'
-                },
-                {
-                  name: 'Alex Turner',
-                  project: 'Nexvix Gym',
-                  role: 'Fitness Manager',
-                  comment: 'High-energy fitness platform with direct free-trial booking calls to action. The 48-hour delivery SLA was strictly met with zero compromise on quality.'
-                },
-                /* Duplicate set for infinite marquee loop */
-                {
-                  name: 'Rohan Sundaram',
-                  project: 'Madurai Food Corner',
-                  role: 'Restaurant Owner',
-                  comment: 'The interactive South Indian menu and instant WhatsApp ordering platform increased catering inquiries by 180%. The video walkthrough and speed give us a massive edge!'
-                },
-                {
-                  name: 'Ananya Sharma',
-                  project: 'Digital Art Studio',
-                  role: 'E-Commerce Founder',
-                  comment: 'NEXVIX built our watercolor portrait e-commerce store with live INR pricing & before/after artwork sliders. Online portrait sales doubled in 30 days.'
-                },
-                {
-                  name: 'Marcus Vance',
-                  project: 'SunPeak Solar Co.',
-                  role: 'Solar Director',
-                  comment: 'Inbound quote inquiries surged by over 140% in our first month after launching the SunPeak platform. Sub-second load times!'
-                },
-                {
-                  name: 'Dr. Sarah Jenkins',
-                  project: 'Serene Health',
-                  role: 'Medical Director',
-                  comment: 'Patient online appointment bookings doubled since launching our calm, trust-focused healthcare portal. Exceptional design and SLA turnaround!'
-                },
-                {
-                  name: 'Alex Turner',
-                  project: 'Nexvix Gym',
-                  role: 'Fitness Manager',
-                  comment: 'High-energy fitness platform with direct free-trial booking calls to action. The 48-hour delivery SLA was strictly met with zero compromise on quality.'
-                }
-              ].map((rev, rIdx) => (
-                <div 
-                  key={rIdx} 
-                  className="w-[320px] sm:w-[380px] shrink-0 bg-[#FFFCF9] border border-[#E8E2D5] rounded-2xl p-6 shadow-sm flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="flex items-center justify-between gap-2 mb-3">
-                      <span className="text-[11px] font-bold text-[#7E520A] bg-[#FAF0D9] border border-[#F3DBA7] px-2.5 py-0.5 rounded-full">
-                        {rev.project}
-                      </span>
-                      <span className="text-xs text-amber-500 font-bold">★★★★★</span>
-                    </div>
-                    <p className="text-xs text-slate-700 leading-relaxed italic mb-4">
-                      "{rev.comment}"
-                    </p>
-                  </div>
-                  <div className="pt-3 border-t border-[#F0EAE0] flex items-center justify-between">
-                    <div>
-                      <h4 className="font-bold text-xs text-[#0F172A]">{rev.name}</h4>
-                      <span className="text-[10px] text-slate-500">{rev.role}</span>
-                    </div>
-                    <span className="text-[10px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
-                      Verified
-                    </span>
-                  </div>
-                </div>
-              ))}
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <Link
+                to="/reviews"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#6348f6] hover:bg-[#5134e8] text-white font-bold text-xs sm:text-sm rounded-full shadow-md transition-all hover:scale-105"
+              >
+                <span>View Live Client Reviews</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           </div>
         </div>

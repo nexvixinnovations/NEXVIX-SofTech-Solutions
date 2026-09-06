@@ -19,6 +19,7 @@ import {
 import SEO from '../components/SEO';
 import StatsBar from '../components/StatsBar';
 import DualDeviceMockup, { HeroTripleDeviceMockup, LaptopMockup } from '../components/DeviceMockup';
+import { pricingCategories } from '../data/pricingData';
 
 
 export default function Home() {
@@ -298,6 +299,63 @@ export default function Home() {
             ))}
           </div>
 
+        </div>
+      </section>
+
+      {/* Services & Offers Overview */}
+      <section className="py-20 bg-[#080616] text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
+            <div className="max-w-2xl">
+              <span className="text-purple-300 font-bold text-xs uppercase tracking-widest">SERVICES & CURRENT OFFERS</span>
+              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl mt-3">Choose the build that fits your next move.</h2>
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed mt-3">
+                From a fast business launch to a complete SaaS platform, every package includes a production-ready build, clear delivery timeline, and the current promotional price.
+              </p>
+            </div>
+            <Link
+              to="/pricing"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-[#0F172A] hover:bg-purple-100 font-extrabold text-xs rounded-full transition-colors shrink-0"
+            >
+              <span>See Full Pricing Matrix</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {pricingCategories.map((service) => (
+              <article key={service.category} className="rounded-2xl border border-[#2b2352] bg-[#110d25] p-6">
+                <div className="flex items-start justify-between gap-4 mb-5">
+                  <div>
+                    <h3 className="font-heading font-extrabold text-xl">{service.category}</h3>
+                    <p className="text-xs text-slate-400 mt-1">{service.tiers.length} package{service.tiers.length === 1 ? '' : 's'} available</p>
+                  </div>
+                  <span className="text-[10px] uppercase tracking-wider font-bold text-emerald-300 bg-emerald-400/10 border border-emerald-400/20 px-2.5 py-1.5 rounded-full whitespace-nowrap">
+                    Limited offers
+                  </span>
+                </div>
+
+                <div className="space-y-3">
+                  {service.tiers.map((tier) => {
+                    const price = tier.prices.USD;
+                    return (
+                      <div key={tier.tierName} className="border-t border-[#2b2352] pt-3 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div className="min-w-0">
+                          <p className="font-bold text-sm truncate">{tier.tierName}</p>
+                          <p className="text-xs text-slate-400 mt-1">{tier.delivery}</p>
+                        </div>
+                        <div className="text-left sm:text-right shrink-0">
+                          <p className="text-[11px] text-slate-500 line-through">{price.original}</p>
+                          <p className="font-heading font-extrabold text-lg text-white">{price.offer}</p>
+                          <p className="text-[11px] font-bold text-emerald-300">Save {price.save}</p>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 

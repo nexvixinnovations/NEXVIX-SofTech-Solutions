@@ -27,6 +27,7 @@ export default function Header() {
     { name: 'Technologies', path: '/technologies' },
     { name: 'About Us', path: '/about' },
     { name: 'Pricing', path: '/pricing' },
+    { name: 'Reviews', path: '/reviews' },
     { name: 'Contact', path: '/contact' },
   ];
 
